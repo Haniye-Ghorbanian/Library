@@ -1,0 +1,65 @@
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    font-family: Dana !important;
+    background-color: rgba(212, 212, 210, 0.35);
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: Dana !important;
+    src: url(./assets/font/Dana-Regular.ttf);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+ul, 
+li {
+    margin: 0 !important;
+    padding: 0;
+}
+
+button {
+    border: none;
+}
+
+
+li {
+    list-style: none !important;
+}
+
+.no-border {
+    border: none !important;
+}
+
+.padding-0 {
+    padding: 0 !important;
+}
+
+.box-shadow-none {
+    box-shadow: none !important;
+}
+
+.background-color-none {
+    background-color: transparent !important;
+}
+
+.color-black {
+    color: black !important;
+}
+
+.accordion-button::after {
+    width: .6rem !important;
+    height: .6rem !important;
+    margin: 0 10px 0 0 !important;
+    background-size: .65rem !important;
+}

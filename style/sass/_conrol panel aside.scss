@@ -1,0 +1,87 @@
+/* control panel */
+
+
+.control-panel {
+    width: 18%;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    background-color: white;
+    top: 0;
+    padding: 100px 40px;
+}
+
+.control-panel__options {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.control-panel__options__container {
+    width: 200px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 15px 0;
+
+}
+
+.control-panel__options__container--icon {
+    margin-left: 10px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 8px;
+    padding: 5px;
+    background-color: rgb(212, 212, 210, 0.35);
+}
+
+.control-panel__options__container--title {
+    font-size: .85rem;
+}
+
+
+.column {
+    flex-direction: column !important ;
+}
+
+.row {
+    display: flex;
+    flex-direction: row !important ;
+    align-items: center;
+}
+
+.align-start {
+align-items: start !important;
+}
+
+
+.no-border {
+    border: none !important;
+}
+
+.padding-0 {
+    padding: 0 !important;
+}
+
+.box-shadow-none {
+    box-shadow: none !important;
+}
+
+.background-color-none {
+    background-color: transparent !important;
+}
+
+.color-black {
+    color: black !important;
+}
+
+.accordion-button::after {
+    width: .6rem !important;
+    height: .6rem !important;
+    margin: 0 10px 0 0 !important;
+    background-size: .65rem !important;
+}
