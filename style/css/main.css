@@ -82,7 +82,7 @@ li {
 }
 
 main {
-  width: 80%;
+  width: 70%;
   height: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,6 +101,8 @@ main {
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 20px;
   width: 80%;
+  right: 25%;
+  padding: 50px;
 }
 
 .library__cards {
@@ -261,7 +263,7 @@ main {
 
 /* control panel */
 .control-panel {
-  width: 18%;
+  width: 15%;
   height: 100vh;
   position: fixed;
   right: 0;

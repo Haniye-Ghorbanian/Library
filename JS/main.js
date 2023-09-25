@@ -1,5 +1,5 @@
 // Getting Doms
-const library = document.getElementById('library');
+const LIBRARY = document.querySelector('.LIBRARY_PAGE_CONTAINER');
 const favButton = document.querySelector('.library__cards__content__buttons--fav');
 
 
@@ -156,7 +156,7 @@ let filterModel = [];
 
 
 // view
-// Adding cards to library
+// Adding cards to LIBRARY
 function createCard(book) {
     const bookCard =
 
@@ -169,13 +169,13 @@ function createCard(book) {
 
                 </div>
                 <div class="library__cards__content">
-                    <h3 class="library__cards__content--title">${book.title}</h3>
-                    <p class="library__cards__content--author">${book.author}</p>
+                    <h3 class="library__cards__content--title fs-lg-20px mb-2 mt-3">${book.title}</h3>
+                    <h4 class="library__cards__content--author mb-3 fw-normal fs-lg-16px">${book.author}</h4>
                    
-                    <div class="library__cards__content__info">
-                        <p class="library__cards__content__info--published-date card-info">${book.published_date}</p>
-                        <p class="library__cards__content__info--genre card-info">${book.genre}</p>
-                        <p class="library__cards__content__info--language card-info">${book.language}</p>
+                    <div class="library__cards__content__info mb-2 w-100">
+                        <h5 class="library__cards__content__info--published-date card-info fs-lg-14px fw-light">${book.published_date}</h5>
+                        <h5 class="library__cards__content__info--genre card-info fs-lg-14px fw-light">${book.genre}</h5>
+                        <h5 class="library__cards__content__info--language card-info fs-lg-14px fw-light">${book.language}</h5>
                     </div>
                    
                     <div class="library__cards__content__buttons">
@@ -246,7 +246,7 @@ function renderCards() {
         const Container = document.createElement('div');
         Container.classList.add('library__cards')
         Container.innerHTML = card;
-        library.appendChild(Container)
+        LIBRARY.appendChild(Container)
     });
 }
 
