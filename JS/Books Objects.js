@@ -4,7 +4,7 @@ const BOOKS = [
         title: "خواجه تاجدار",
         author: "ژان گور",
         published_date: 2007,
-        language: "persian",
+        language: "فارسی",
         genre: "تاریخ",
         imgSrc: "1.jpg"
     },
@@ -13,7 +13,7 @@ const BOOKS = [
         title: "ضیافت",
         author: "افلاطون",
         published_date: 385,
-        language: "greek",
+        language: "یونانی",
         genre: "فلسفه",
         imgSrc: "2.jpg"
     },
@@ -22,7 +22,7 @@ const BOOKS = [
         title: "منطق الطیر",
         author: "عطار",
         published_date: 1177,
-        language: "persian",
+        language: "فارسی",
         genre: "شعر",
         imgSrc: "3.jpg"
     },
@@ -31,7 +31,7 @@ const BOOKS = [
         title: "مثنوی معنوی",
         author: "مولوی",
         published_date: 1258,
-        language: "persian",
+        language: "فارسی",
         genre: "شعر",
         imgSrc: "4.jpg"
     },
@@ -40,7 +40,7 @@ const BOOKS = [
         title: "دیوان حافظ",
         author: "حافظ",
         published_date: 1200,
-        language: "persian",
+        language: "فارسی",
         genre: "شعر",
         imgSrc: "5.jpg"
     },
@@ -49,7 +49,7 @@ const BOOKS = [
         title: "رومیو و جولیت",
         author: "ویلیام شکسپیر",
         published_date: 1595,
-        language: "english",
+        language: "انگلیسی",
         genre: "عاشقانه",
         imgSrc: "6.jpg"
     },
@@ -58,7 +58,7 @@ const BOOKS = [
         title: "ویس و رامین",
         author: "فخرالدین اسعد گرگانی",
         published_date: 1054,
-        language: "persian",
+        language: "فارسی",
         genre: "عاشقانه",
         imgSrc: "7.jpg"
     },
@@ -67,7 +67,7 @@ const BOOKS = [
         title: "گلستان",
         author: "سعدی",
         published_date: 1258,
-        language: "persian",
+        language: "فارسی",
         genre: "شعر",
         imgSrc: "8.jpg"
     },
@@ -76,7 +76,7 @@ const BOOKS = [
         title: "بوستان",
         author: "سعدی",
         published_date: 1257,
-        language: "persian",
+        language: "فارسی",
         genre: "شعر",
         imgSrc: "9.jpg"
     },
@@ -85,7 +85,7 @@ const BOOKS = [
         title: "گلشن راز",
         author: "شیخ محمود شبستری",
         published_date: 1311,
-        language: "persian",
+        language: "فارسی",
         genre: "شعر",
         imgSrc: "10.jpg"
     },
@@ -94,7 +94,7 @@ const BOOKS = [
         title: "لیلی و مجنون",
         author: "نظامی",
         published_date: 1188,
-        language: "persian",
+        language: "فارسی",
         genre: "عاشقانه",
         imgSrc: "11.jpg"
     },
@@ -103,7 +103,7 @@ const BOOKS = [
         title: "شاهنامه",
         author: "فردوسی",
         published_date: 1010,
-        language: "persian",
+        language: "فارسی",
         genre: "شعر",
         imgSrc: "12.jpg"
     },
@@ -112,7 +112,7 @@ const BOOKS = [
         title: "ایلیاد",
         author: "هومر",
         published_date: 762,
-        language: "greek",
+        language: "یونانی",
         genre: "شعر",
         imgSrc: "13.jpg"
     },
@@ -121,7 +121,7 @@ const BOOKS = [
         title: "اودیسه",
         author: "هومر",
         published_date: 725,
-        language: "greek",
+        language: "یونانی",
         genre: "شعر",
         imgSrc: "14.jpg"
     },
@@ -130,7 +130,7 @@ const BOOKS = [
         title: "هملت",
         author: "ویلیام شکسپیر",
         published_date: 1609,
-        language: "greek",
+        language: "یونانی",
         genre: "درام",
         imgSrc: "15.jpg"
     },
@@ -139,7 +139,7 @@ const BOOKS = [
         title: "دن کیشوت",
         author: "میگل دسروانتس",
         published_date: 1605,
-        language: "spanish",
+        language: "اسپانیایی",
         genre: "درام",
         imgSrc: "16.jpg"
     }
