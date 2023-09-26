@@ -25,8 +25,8 @@ function genreCategorymaker(genres) {
     return new Promise((resolve) => {
         genreOptions = genres.map(genre => {
             return `
-                <li class="control-panel__options__container--body--options--genre--options--${persianToEnglish(genre)} pb-2 pt-2">
-                    <input type="checkbox" id="${persianToEnglish(genre)}" class="GENRE_CHECKBOXES">
+                <li class="control-panel__options__container--body--options--genre--options--${persianToEnglish(genre)} pb-2 pt-2 d-flex align-items-center">
+                    <input type="checkbox" id="${persianToEnglish(genre)}" class="GENRE_CHECKBOXES mgc mgc-primary">
                     <label for="${persianToEnglish(genre)}">${genre}</label>
                 </li>`;
         });
