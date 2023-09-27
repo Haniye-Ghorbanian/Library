@@ -1,6 +1,7 @@
-// Model
+// Models
 let GENRE_CHECKBOXES;
 let genreOptions;
+let generalFilteredBooks = [];
 let filterOnGenre = [];
 let filterOnLanguage = [];
 let filterOnYear = [];
@@ -82,11 +83,16 @@ function identifyLanguageCheckbox() {
 
 
 function findBooksOnGenre(event) {
+    debugger
     switch (event.target.checked) {
         case true:
-            const filteredBooksOnGenre = BOOKS.filter(book => persianToEnglish(book.genre) === event.target.getAttribute('id'));
-            filteredBooksOnGenre.forEach(filteredBook => filterOnGenre.push(filteredBook));
-            displayBooksOnGenre(filterOnGenre);
+            if(filterOnLanguage.length !== 0) {
+             displayBooksOnLanguage(filterOnLanguage)          
+            } else {
+                const filteredBooksOnGenre = BOOKS.filter(book => persianToEnglish(book.genre) === event.target.getAttribute('id'));
+                filteredBooksOnGenre.forEach(filteredBook => filterOnGenre.push(filteredBook));
+                displayBooksOnGenre(filterOnGenre);
+            }
             break;
 
         case false:
@@ -99,7 +105,7 @@ function findBooksOnGenre(event) {
 
 
 function findBooksOnLanguage(event) {
-    // debugger
+    debugger
     switch (event.target.checked) {
         case true:
             switch (filterOnGenre.length === 0) {
