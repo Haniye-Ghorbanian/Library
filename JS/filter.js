@@ -127,11 +127,20 @@ function findBooksOnGenre(event) {
     switch (event.target.checked) {
         case true:
             
-           
+            if(filterOnLanguage.length === 0){
                 const filteredBooksOnGenre = BOOKS.filter(book => persianToEnglish(book.genre) === event.target.getAttribute('id'));
                 filteredBooksOnGenre.forEach(filteredBook => filterOnGenre.push(filteredBook));
                 filteredBooksOnGenre.forEach(filteredBook => generalFilteredBooks.push(filteredBook));
                 displayFilteredBooks(generalFilteredBooks);
+            }
+
+            else {
+                const filteredBooksOnGenre = filterOnLanguage.filter(book => persianToEnglish(book.genre) === event.target.getAttribute('id'));
+                filteredBooksOnGenre.forEach(book => filterOnGenre.push(book));
+                filteredBooksOnGenre.forEach(book => generalFilteredBooks.push(book));
+                displayFilteredBooks(generalFilteredBooks);
+            }
+                
             
             break;
 
