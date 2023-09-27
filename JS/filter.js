@@ -126,15 +126,13 @@ function findBooksOnGenre(event) {
     // debugger
     switch (event.target.checked) {
         case true:
-            if(filterOnLanguage.length !== 0) {
-             displayBooksOnLanguage(filterOnLanguage)          
-            } 
-            else {
+            
+           
                 const filteredBooksOnGenre = BOOKS.filter(book => persianToEnglish(book.genre) === event.target.getAttribute('id'));
                 filteredBooksOnGenre.forEach(filteredBook => filterOnGenre.push(filteredBook));
                 filteredBooksOnGenre.forEach(filteredBook => generalFilteredBooks.push(filteredBook));
                 displayFilteredBooks(generalFilteredBooks);
-            }
+            
             break;
 
         case false:
@@ -147,8 +145,8 @@ function findBooksOnGenre(event) {
 
 // For language filter::start
 function findBooksOnLanguage(event) {
-    
-    // debugger
+    let filteredBooksOnLanguageWithGenre;
+    debugger
     switch (event.target.checked) {
         case true:
 
@@ -156,7 +154,6 @@ function findBooksOnLanguage(event) {
                 filteredBooksOnLanguage = BOOKS.filter(book => persianToEnglish(book.language) === event.target.getAttribute('id'));
 
                 filteredBooksOnLanguage.forEach(filteredBook => filterOnLanguage.push(filteredBook));
-                console.log(filterOnLanguage);
 
                 const filteredBooksOnLanguageNoGenre = BOOKS.filter(book => persianToEnglish(book.language) === event.target.getAttribute('id'));
 
@@ -166,23 +163,49 @@ function findBooksOnLanguage(event) {
             }
 
             else if(filterOnGenre.length !== 0) {
-                const filteredBooksOnLanguageWithGenre = generalFilteredBooks.filter(book => persianToEnglish(book.language) === event.target.getAttribute('id'));
-
+               
                 filteredBooksOnLanguage = BOOKS.filter(book => persianToEnglish(book.language) === event.target.getAttribute('id'));
-
                 filteredBooksOnLanguage.forEach(filteredBook => filterOnLanguage.push(filteredBook));
-                console.log(filterOnLanguage)
 
-                generalFilteredBooks = [];
-                filteredBooksOnLanguageWithGenre.forEach(filteredBook => generalFilteredBooks.push(filteredBook));
+                let checkedLanguageCheckboxes = [];
+                checkedLanguageCheckboxes = LANGUAGE_CHECKBOXES.filter(checkbox => checkbox.checked);
+
+
+                if(checkedLanguageCheckboxes.length > 1) {
+
+                    let filteredBooksOnLanguageWithGenre = [];
+
+                    checkedLanguageCheckboxes.map(checkbox => {
+                        const x = filterOnGenre.filter(book => {
+                            return persianToEnglish(book.language) === checkbox.getAttribute('id');
+                        });
+                        filteredBooksOnLanguageWithGenre.push(...x); 
+                    });
+                    
+
+                    console.log(filteredBooksOnLanguageWithGenre)
+                    generalFilteredBooks = [];
+                    filteredBooksOnLanguageWithGenre.forEach(filteredBook => generalFilteredBooks.push(filteredBook));
+                    
+                    displayFilteredBooks(generalFilteredBooks);
+                    
+
+                } 
                 
-                displayFilteredBooks(generalFilteredBooks);
+                else {
+                   filteredBooksOnLanguageWithGenre = generalFilteredBooks.filter(book => persianToEnglish(book.language) === event.target.getAttribute('id'));
+
+                    generalFilteredBooks = [];
+                    filteredBooksOnLanguageWithGenre.forEach(filteredBook => generalFilteredBooks.push(filteredBook));
+                        
+                    displayFilteredBooks(generalFilteredBooks);
+                }
             }  
             
             break;
 
         case false:
-            
+            deleteUncheckedLanguage(event.target)
             break;
     }
 }
@@ -225,6 +248,36 @@ function deleteUncheckedGenre(uncheckedGenre) {
     
 }
 // For genre filters::end
+
+
+// For language filters::start
+function deleteUncheckedLanguage(uncheckedLanguage) {
+    filterOnLanguage = filterOnLanguage.filter(filteredBook => persianToEnglish(filteredBook.language) !== uncheckedLanguage.getAttribute('id'));
+
+    if(filterOnGenre.length === 0 && filterOnLanguage >= 1) {
+        generalFilteredBooks = generalFilteredBooks.filter(filteredBook => persianToEnglish(filteredBook.language) !== uncheckedLanguage.getAttribute('id'));
+        displayFilteredBooks(generalFilteredBooks); 
+    }
+
+    else if(filterOnGenre.length === 0 && filterOnLanguage.length === 0) {
+        filterOnLanguage = filterOnLanguage.filter(filteredBook => persianToEnglish(filteredBook.language) !== uncheckedLanguage.getAttribute('id'));
+        generalFilteredBooks = [];
+        displayFilteredBooks(generalFilteredBooks);
+        // ok
+    }
+
+    else if(filterOnGenre.length >= 1 && filterOnLanguage.length === 0) {
+        generalFilteredBooks = [];
+        filterOnGenre.forEach(book => generalFilteredBooks.push(book));
+        displayFilteredBooks(generalFilteredBooks);
+    }
+
+    else if(filterOnGenre.lenght >= 1 && filterOnLanguage >= 1) {
+        generalFilteredBooks = generalFilteredBooks.filter(filteredBook => persianToEnglish(filteredBook.language) !== uncheckedLanguage.getAttribute('id'));
+        displayFilteredBooks(generalFilteredBooks); 
+    } 
+}
+// For language filters::end
 
 // controlling unchecked inputs for genre and language filters::end
 
