@@ -1,5 +1,4 @@
 body {
-  height: 100vh;
   width: 100%;
   margin: 0;
   font-family: Dana !important;
@@ -108,65 +107,33 @@ li {
   border-color: #fff;
 }
 
-.container {
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  position: relative;
+.base-container {
+  height: inherit;
+  padding: 0;
 }
 
-main {
-  width: 70%;
-  height: auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding: 50px 0px;
+.all-books-page {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
 }
 
 .library {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  width: 80%;
-  right: 25%;
-  padding: 50px;
+  right: 15%;
+  width: 70%;
+  height: auto;
+}
+@media (max-width: 500px) {
+  .library {
+    padding: 0;
+  }
 }
 
 .library__cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   background-color: white;
-  padding: 20px;
+  padding: 20px 0;
   border-radius: 10px;
+  max-width: 280px;
 }
 
 .library__cards--bookmoc {
@@ -309,11 +276,7 @@ main {
 /* control panel */
 .control-panel {
   width: 15%;
-  height: 100vh;
-  position: fixed;
-  right: 0;
   background-color: white;
-  top: 0;
   padding: 100px 40px;
 }
 
