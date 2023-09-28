@@ -28,9 +28,9 @@ function renderCards() {
                    
                     <div class="cards__content__buttons">
                         <button class="cards__content__buttons--add ADD_TO_LIBRARY_BTN" data-book-id="${book.id}">افزودن به کتابخانه</button>
-                        <button class="cards__content__buttons--fav ADD_TO_FAV_BTN" data-book-id="${book.id}>
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
+                        
+                        <i class="fa-regular fa-heart cards__content__buttons--fav ADD_TO_FAV_BTN" data-fav-book="${book.id}"></i>
+                        
                     </div>
                 </div>
             </div>
@@ -38,10 +38,12 @@ function renderCards() {
         `
     })
 
-    LIBRARY.innerHTML = bookCard.join('');
-    ADD_TO_LIBRARY_BTN = Array.from(document.querySelectorAll('.ADD_TO_LIBRARY_BTN'));
-    console.log(ADD_TO_LIBRARY_BTN);
-    handleAddToMyLibrary(ADD_TO_LIBRARY_BTN)
+    LIBRARY.innerHTML    = bookCard.join('');
+    ADD_TO_LIBRARY_BTN   = Array.from(document.querySelectorAll('.ADD_TO_LIBRARY_BTN'));
+    ADD_TO_FAV_BTN       = Array.from(document.querySelectorAll('.ADD_TO_FAV_BTN'));
+   
+    handleAddToMyLibrary(ADD_TO_LIBRARY_BTN);
+    handleAddtoFav(ADD_TO_FAV_BTN);
 }
 
 

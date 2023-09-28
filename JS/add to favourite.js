@@ -1,18 +1,21 @@
-
-// model 
-let booksInSavedArr = [];
-
+// Model
+let booksInFavArr = [];
 
 
-function addToLibrary(event) {
-   const exisetdInLibraryBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-book-id'));
-   booksInSavedArr.push(exisetdInLibraryBook);
-   renderAllSavedBooks(booksInSavedArr);
+
+
+function addToFav(event) {
+    debugger
+    const exisetdInFavBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-fav-book'));
+    booksInFavArr.push(exisetdInFavBook);
+    renderAllFavBooks(booksInFavArr);
 }
 
 
-function renderAllSavedBooks(booksInSavedArr) {
-    const savedBooksCardTemplate = booksInSavedArr.map(book => {
+
+
+function renderAllFavBooks(booksInFavArr) {
+    const favBooksCardTemplate = booksInFavArr.map(book => {
         return  `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
             
         <div class="cards--bookmoc">
@@ -39,16 +42,12 @@ function renderAllSavedBooks(booksInSavedArr) {
     `
     })
 
-    ALL_SAVED_BOOKS.innerHTML = savedBooksCardTemplate;
-   
+    FAV_SAVED_BOOKS.innerHTML = favBooksCardTemplate;
 }
 
 
 
 
-
-
-function handleAddToMyLibrary(buttons) {
-    buttons.map(btn => btn.addEventListener('click', addToLibrary));
+function handleAddtoFav(buttons) {
+    buttons.map(btn => btn.addEventListener('click', addToFav))
 }
-
