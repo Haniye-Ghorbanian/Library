@@ -16,3 +16,5 @@ let ADD_TO_LIBRARY_BTN;
 // My library page
 const MY_LIBRARY_BTN = document.querySelector('.MY_LIBRARY_BTN');
 const MY_LIBRARY_PAGE = document.querySelector('.MY_LIBRARY_PAGE');
+const ALL_SAVED_BOOKS = document.querySelector('.ALL_SAVED_BOOKS');
+

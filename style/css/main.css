@@ -69,6 +69,10 @@ a:visited {
   background-size: 0.65rem !important;
 }
 
+.right-20 {
+  right: 20%;
+}
+
 .mgc {
   position: relative;
   width: 16px;
@@ -136,14 +140,14 @@ a:visited {
   }
 }
 
-.library__cards {
+.cards {
   background-color: white;
   padding: 20px 0;
   border-radius: 10px;
   max-width: 250px;
 }
 
-.library__cards--bookmoc {
+.cards--bookmoc {
   height: 200px;
   width: 150px;
   background-color: #90f2ff;
@@ -153,8 +157,8 @@ a:visited {
   border-radius: 6px;
 }
 
-.library__cards--bookmoc::after,
-.library__cards--bookmoc::before {
+.cards--bookmoc::after,
+.cards--bookmoc::before {
   content: "";
   width: 100%;
   height: 100%;
@@ -163,7 +167,7 @@ a:visited {
   border-radius: 6px;
 }
 
-.library__cards--bookmoc::after {
+.cards--bookmoc::after {
   top: 0;
   right: 0;
   width: 100%;
@@ -171,7 +175,7 @@ a:visited {
           box-shadow: inset -4px 0px 5px 4px rgba(0, 0, 0, 0.2);
 }
 
-.library__cards--bookmoc::before {
+.cards--bookmoc::before {
   top: 0;
   right: 9px;
   width: 1px;
@@ -180,13 +184,13 @@ a:visited {
           box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.3098039216);
 }
 
-.library__cards--bookmoc--image {
+.cards--bookmoc--image {
   width: 100%;
   height: 100%;
   border-radius: 6px;
 }
 
-.library__cards--bookmoc--image--frame {
+.cards--bookmoc--image--frame {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -194,7 +198,7 @@ a:visited {
   border-radius: 6px;
 }
 
-.library__cards__content {
+.cards__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,11 +214,11 @@ a:visited {
           align-items: center;
 }
 
-.library__cards__content--title {
+.cards__content--title {
   margin: 12px;
 }
 
-.library__cards__content__info {
+.cards__content__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -226,11 +230,11 @@ a:visited {
           align-items: center;
 }
 
-.library__cards__content__info p {
+.cards__content__info p {
   margin: 10px;
 }
 
-.library__cards__content__buttons {
+.cards__content__buttons {
   width: 150px;
   margin-top: 10px;
   display: -webkit-box;
@@ -248,11 +252,11 @@ a:visited {
           align-items: center;
 }
 
-.library__cards__content__buttons i {
+.cards__content__buttons i {
   color: white !important;
 }
 
-.library__cards__content__buttons--add {
+.cards__content__buttons--add {
   background-color: #5b696a;
   color: white;
   font-size: 0.7rem;
@@ -263,7 +267,7 @@ a:visited {
   border-radius: 6px;
 }
 
-.library__cards__content__buttons--fav {
+.cards__content__buttons--fav {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -409,4 +413,10 @@ a:visited {
   background-color: #555;
 }
 
-/*  *//*# sourceMappingURL=main.css.map */
+/*  */
+.saved-books {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 70%;
+}/*# sourceMappingURL=main.css.map */
