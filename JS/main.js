@@ -6,7 +6,7 @@ function renderCards() {
    
 
     const bookCard = BOOKS.map(book => {
-        return  `<div class="library__cards col-lg-4 m-4 d-flex flex-column align-items-center justify-content-center">
+        return  `<div class="library__cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
             
             <div class="library__cards--bookmoc">
 
@@ -27,7 +27,7 @@ function renderCards() {
                     </div>
                    
                     <div class="library__cards__content__buttons">
-                        <button class="library__cards__content__buttons--add">افزودن به کتابخانه</button>
+                        <button class="library__cards__content__buttons--add ADD_TO_LIBRARY_BTN">افزودن به کتابخانه</button>
                         <div class="library__cards__content__buttons--fav ">
                             <i class="fa-regular fa-heart"></i>
                         </div>
@@ -38,7 +38,10 @@ function renderCards() {
         `
     })
 
-    LIBRARY.innerHTML = bookCard.join('')
+    LIBRARY.innerHTML = bookCard.join('');
+    ADD_TO_LIBRARY_BTN = Array.from(document.querySelectorAll('.ADD_TO_LIBRARY_BTN'));
+    console.log(ADD_TO_LIBRARY_BTN);
+    handleAddToMyLibrary(ADD_TO_LIBRARY_BTN)
 }
 
 

@@ -36,6 +36,13 @@ li {
     list-style: none !important;
 }
 
+a,
+a:visited {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .no-border {
     border: none !important;
 }

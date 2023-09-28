@@ -1,3 +1,7 @@
+// All books page
+const ALL_BOOKS_PAGE = document.querySelector('.ALL_BOOKS_PAGE');
+
+
 // control panel section
 const GENRE_OPTIONS_CONTAINER       = document.querySelector('.GENRE_OPTIONS_CONTAINER')
 const LANGUAGE_OPTIONS_CONTAINER    = document.querySelector('.LANGUAGE_OPTIONS_CONTAINER')
@@ -6,3 +10,9 @@ const LANGUAGE_OPTIONS_CONTAINER    = document.querySelector('.LANGUAGE_OPTIONS_
 
 // library sectoin
 const LIBRARY = document.querySelector('.LIBRARY_PAGE_CONTAINER');
+let ADD_TO_LIBRARY_BTN;
+
+
+// My library page
+const MY_LIBRARY_BTN = document.querySelector('.MY_LIBRARY_BTN');
+const MY_LIBRARY_PAGE = document.querySelector('.MY_LIBRARY_PAGE');
