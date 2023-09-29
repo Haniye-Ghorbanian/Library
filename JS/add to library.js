@@ -20,13 +20,14 @@ function changeButtonStyle(button) {
         button.textContent = 'افزودن به کتابخانه'
     }, 1500);
 
-    button.textContent = 'افزوده شد'
+    button.textContent = 'موجود در کتابخانه'
     const newElement = document.createElement('i');
-    newElement.className = 'fa-solid fa-trash cards__content__buttons--bin MyIcon ADD_TO_FAV_BTN';
+    newElement.className = 'fa-solid fa-trash cards__content__buttons--bin MyIcon BIN_BTN';
     
-    button.parentElement.style.width ='180px'
+    button.parentElement.style.width ='200px'
     button.parentElement.appendChild(newElement);
     console.log(button.parentElement)
+    
 
 }
 

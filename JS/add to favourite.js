@@ -5,10 +5,16 @@ let booksInFavArr = [];
 
 
 function addToFav(event) {
-    debugger
+    
     const exisetdInFavBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-fav-book'));
     booksInFavArr.push(exisetdInFavBook);
     renderAllFavBooks(booksInFavArr);
+    changeFavBtnStyle(event.target)
+}
+
+function changeFavBtnStyle(button) {
+    button.classList.remove('fa-regula')
+    button.classList.add('fa-solid')
 }
 
 

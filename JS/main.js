@@ -6,6 +6,7 @@ function renderCards() {
    
 
     const bookCard = BOOKS.map(book => {
+        
         return  `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
             
             <div class="cards--bookmoc">
@@ -38,7 +39,7 @@ function renderCards() {
             </div>
         `
     })
-
+    
     LIBRARY.innerHTML           = bookCard.join('');
     ADD_TO_LIBRARY_BTN          = Array.from(document.querySelectorAll('.ADD_TO_LIBRARY_BTN'));
     CARD_BUTTONS_CONTAINER      = Array.from(document.querySelectorAll('.CARD_BUTTONS_CONTAINER'));
