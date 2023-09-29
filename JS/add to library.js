@@ -5,11 +5,11 @@ let booksInSavedArr = [];
 
 
 function addToLibrary(event) {
-    
+    // debugger
     const exisetdInLibraryBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-book-id'));
     booksInSavedArr.push(exisetdInLibraryBook);
-    changeButtonStyle(event.target)
     renderAllSavedBooks(booksInSavedArr);
+    changeButtonStyle(event.target)
 }
 
 
@@ -21,17 +21,29 @@ function changeButtonStyle(button) {
     }, 1500);
     button.textContent = 'موجود در کتابخانه'
     
+    let BIN_BTN;
     if(binIsCreated == false) {
-        const newElement = document.createElement('i');
-        newElement.className = 'fa-solid fa-trash cards__content__buttons--bin MyIcon BIN_BTN';  
+        BIN_BTN = document.createElement('i');
+        BIN_BTN.className = `fa-solid fa-trash cards__content__buttons--bin MyIcon BIN_BTN`;  
+
+        console.log(BIN_BTN)
+        BIN_BTN.addEventListener('click', () => handleTrashIconClick(button));
+
+
         button.parentElement.style.width ='200px'
-        button.parentElement.appendChild(newElement);
+        button.parentElement.appendChild(BIN_BTN);
         binIsCreated = true;
+    } else {
+        BIN_BTN.removeAttribute('onclick');
     }
     
-  
-    
+}
 
+
+function handleTrashIconClick(button) {
+    debugger
+    booksInSavedArr = booksInSavedArr.filter(book => book.id !== +button.getAttribute('data-book-id'));
+    renderAllSavedBooks(booksInSavedArr);
 }
 
 

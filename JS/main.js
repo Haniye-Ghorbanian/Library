@@ -6,7 +6,7 @@ function renderCards() {
    
 
     const bookCard = BOOKS.map(book => {
-        
+
         return  `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
             
             <div class="cards--bookmoc">
@@ -45,7 +45,7 @@ function renderCards() {
     CARD_BUTTONS_CONTAINER      = Array.from(document.querySelectorAll('.CARD_BUTTONS_CONTAINER'));
     ADD_TO_FAV_BTN              = Array.from(document.querySelectorAll('.ADD_TO_FAV_BTN'));
 
-   console.log(CARD_BUTTONS_CONTAINER)
+   
     handleAddToMyLibrary(ADD_TO_LIBRARY_BTN);
     handleAddtoFav(ADD_TO_FAV_BTN);
 }
