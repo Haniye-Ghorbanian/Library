@@ -5,15 +5,36 @@ let booksInSavedArr = [];
 
 
 function addToLibrary(event) {
-   const exisetdInLibraryBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-book-id'));
-   booksInSavedArr.push(exisetdInLibraryBook);
-   renderAllSavedBooks(booksInSavedArr);
+    
+    const exisetdInLibraryBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-book-id'));
+    booksInSavedArr.push(exisetdInLibraryBook);
+    changeButtonStyle(event.target)
+    renderAllSavedBooks(booksInSavedArr);
 }
+
+
+
+function changeButtonStyle(button) {
+
+    setTimeout(() => {
+        button.textContent = 'افزودن به کتابخانه'
+    }, 1500);
+
+    button.textContent = 'افزوده شد'
+    const newElement = document.createElement('i');
+    newElement.className = 'fa-solid fa-trash cards__content__buttons--bin MyIcon ADD_TO_FAV_BTN';
+    
+    button.parentElement.style.width ='180px'
+    button.parentElement.appendChild(newElement);
+    console.log(button.parentElement)
+
+}
+
 
 
 function renderAllSavedBooks(booksInSavedArr) {
     const savedBooksCardTemplate = booksInSavedArr.map(book => {
-        return  `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
+        return `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
             
         <div class="cards--bookmoc">
 
@@ -40,7 +61,7 @@ function renderAllSavedBooks(booksInSavedArr) {
     })
 
     ALL_SAVED_BOOKS.innerHTML = savedBooksCardTemplate;
-   
+
 }
 
 
@@ -48,7 +69,7 @@ function renderAllSavedBooks(booksInSavedArr) {
 
 
 
-function handleAddToMyLibrary(buttons) {
-    buttons.map(btn => btn.addEventListener('click', addToLibrary));
+function handleAddToMyLibrary(buttonsContainers) {
+    buttonsContainers.map(btn => btn.addEventListener('click', addToLibrary));
 }
 

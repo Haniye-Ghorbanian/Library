@@ -228,6 +228,7 @@ a:visited {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 150px;
 }
 
 .cards__content__info p {
@@ -257,17 +258,20 @@ a:visited {
 }
 
 .cards__content__buttons--add {
-  background-color: #5b696a;
-  color: white;
   font-size: 0.7rem;
   font-weight: 500;
-  font-family: Dana;
   padding: 10px;
-  cursor: pointer;
-  border-radius: 6px;
 }
 
 .cards__content__buttons--fav {
+  background-color: #aa502b;
+}
+
+.cards__content__buttons--bin {
+  background-color: rgba(91, 105, 106, 0.5529411765);
+}
+
+.MyIcon {
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -280,10 +284,55 @@ a:visited {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #aa502b;
   cursor: pointer;
 }
 
+.Mybtn {
+  background-color: #5b696a;
+  color: white;
+  font-family: Dana;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.text-animation {
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.active {
+  height: 1em;
+  /* Adjust the height to match your text size */
+  opacity: 1;
+  -webkit-transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  -webkit-animation: slideFromTop 0.5s ease-in-out;
+          animation: slideFromTop 0.5s ease-in-out;
+}
+
+@-webkit-keyframes slideFromTop {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes slideFromTop {
+  from {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
 /* control panel */
 .control-panel {
   width: 15%;
