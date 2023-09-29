@@ -309,31 +309,31 @@ function displayFilteredBooks(filteredBooks) {
         default:
             const displayedBooksOnGenre = filteredBooks.map(book => {
                 return `   
-                <div class="library__cards">
-                    <div class="library__cards--bookmoc">
+                <div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
+                    <div class="cards--bookmoc">
 
-                           <div class="library__cards--bookmoc--image">
-                           <img class="library__cards--bookmoc--image--frame" src="./assets/images/${book.imgSrc}" alt="">
+                           <div class="cards--bookmoc--image">
+                           <img class="cards--bookmoc--image--frame" src="./assets/images/${book.imgSrc}" alt="">
                            </div>
             
                     </div>
 
 
-                     <div class="library__cards__content">
-                            <h3 class="library__cards__content--title fs-lg-20px mb-2 mt-3">${book.title}</h3>
-                            <h4 class="library__cards__content--author mb-3 fw-normal fs-lg-16px">${book.author}</h4>
+                     <div class="cards__content">
+                            <h3 class="cards__content--title fs-lg-20px mb-2 mt-3">${book.title}</h3>
+                            <h4 class="cards__content--author mb-3 fw-normal fs-lg-16px">${book.author}</h4>
            
-                            <div class="library__cards__content__info mb-2 w-100">
-                                <h5 class="library__cards__content__info--published-date card-info fs-lg-14px fw-light">${book.published_date}</h5>
-                                <h5 class="library__cards__content__info--genre card-info fs-lg-14px fw-light">${book.genre}</h5>
-                                <h5 class="library__cards__content__info--language card-info fs-lg-14px fw-light">${book.language}</h5>
+                            <div class="cards__content__info mb-2">
+                                <h5 class="cards__content__info--published-date card-info fs-lg-14px fw-light">${book.published_date}</h5>
+                                <h5 class="cards__content__info--genre card-info fs-lg-14px fw-light">${book.genre}</h5>
+                                <h5 class="cards__content__info--language card-info fs-lg-14px fw-light">${book.language}</h5>
                             </div>
            
-                            <div class="library__cards__content__buttons">
-                                <button class="library__cards__content__buttons--add">افزودن به کتابخانه</button>
-                                <div class="library__cards__content__buttons--fav ">
-                                    <i class="fa-regular fa-heart"></i>
-                                </div>
+                            <div class="cards__content__buttons">
+                                <button class="cards__content__buttons--add Mybtn">افزودن به کتابخانه</button>
+                                
+                                <i class="fa-regular fa-heart cards__content__buttons--fav MyIcon"></i>
+                            
                             </div>
                      </div>
                     </div>

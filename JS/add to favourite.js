@@ -2,26 +2,47 @@
 let booksInFavArr = [];
 
 
-
+let addedToFav = false;
 
 function addToFav(event) {
-    
-    const exisetdInFavBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-fav-book'));
-    booksInFavArr.push(exisetdInFavBook);
-    renderAllFavBooks(booksInFavArr);
-    changeFavBtnStyle(event.target)
+    debugger
+    if (!addedToFav) {
+        const exisetdInFavBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-fav-book'));
+        booksInFavArr.push(exisetdInFavBook);
+        renderAllFavBooks(booksInFavArr);
+        addedToFav = true; 
+        changeFavBtnStyle(event.target, addedToFav);
+        // changeFavBtnStyle(event.target);
+    } else {
+        deleteFromFav(event.target);
+        addedToFav = false; 
+        changeFavBtnStyle(event.target, addedToFav);
+    }
 }
 
+
 function changeFavBtnStyle(button) {
-    button.classList.remove('fa-regula')
-    button.classList.add('fa-solid')
+    if(addedToFav){
+       button.classList.remove('fa-regular');
+       button.classList.add('fa-solid');
+    } else {
+       button.classList.remove('fa-solid');
+       button.classList.add('fa-regular');
+    }
 }
+
+
+function deleteFromFav(button) {
+    booksInFavArr = booksInFavArr.filter(book => book.id !== +button.getAttribute('data-fav-book'));
+    renderAllFavBooks(booksInFavArr);
+}
+
 
 
 
 
 function renderAllFavBooks(booksInFavArr) {
-    const favBooksCardTemplate = booksInFavArr.map(book => {
+    const favBooksCardTemplate = [... new Set(booksInFavArr)].map(book => {
         return  `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
             
         <div class="cards--bookmoc">

@@ -13,20 +13,23 @@ function addToLibrary(event) {
 }
 
 
-
+let binIsCreated = false;
 function changeButtonStyle(button) {
 
     setTimeout(() => {
         button.textContent = 'افزودن به کتابخانه'
     }, 1500);
-
     button.textContent = 'موجود در کتابخانه'
-    const newElement = document.createElement('i');
-    newElement.className = 'fa-solid fa-trash cards__content__buttons--bin MyIcon BIN_BTN';
     
-    button.parentElement.style.width ='200px'
-    button.parentElement.appendChild(newElement);
-    console.log(button.parentElement)
+    if(binIsCreated == false) {
+        const newElement = document.createElement('i');
+        newElement.className = 'fa-solid fa-trash cards__content__buttons--bin MyIcon BIN_BTN';  
+        button.parentElement.style.width ='200px'
+        button.parentElement.appendChild(newElement);
+        binIsCreated = true;
+    }
+    
+  
     
 
 }
@@ -34,7 +37,7 @@ function changeButtonStyle(button) {
 
 
 function renderAllSavedBooks(booksInSavedArr) {
-    const savedBooksCardTemplate = booksInSavedArr.map(book => {
+    const savedBooksCardTemplate = [...new Set (booksInSavedArr)].map(book => {
         return `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
             
         <div class="cards--bookmoc">
