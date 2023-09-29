@@ -46,7 +46,7 @@
     <main class="base-container position-relative w-100">
 
         <!-- All books page::start -->
-        <main class="ALL_BOOKS_PAGE all-books-page w-100 position-absolute top-0 z-0 ">
+        <main class="ALL_BOOKS_PAGE all-books-page w-100 position-absolute top-0 z-0">
             <!-- All books page => control panel(right side of the page)::start -->
             <aside class="control-panel end-0 top-0 position-fixed h-100 ">
 
@@ -389,14 +389,39 @@
 
 
             <!-- Saved books page (My library page) => saved book cards::start -->
-            <section class="saved-books SAVED_BOOKS_CONTAINER position-absolute top-0 right-20">
-                <div class="saved-books__all ALL_SAVED_BOOKS d-flex">
+            <section class="saved-books position-absolute  SAVED_BOOKS_CONTAINER top-0 right-20">
 
+                <div class="saved-books__container w-100 d-flex mb-5 mt-5 flex-wrap">
+                    <div class="saved-books__container--title d-flex justify-content-between align-items-center pt-4 pb-3 pe-3 ps-3">
+                        <span class="fs-lg-20px fw-semibold ms-3">همه کتاب‌ها</span>
+
+                        <div>
+                            <i class="fa-solid fa-chevron-down fs-lg-10px"></i>
+                            <span class="fs-lg-10px">نمایش همه</span>
+
+                        </div>
+                    </div>
+                    <div class="saved-books__container--books align-items-center saved-books-title d-flex align-items-center ALL_SAVED_BOOKS">
+                        <!-- All saved books go here -->
+                    </div>
                 </div>
 
-                <div class="saved-books__fav FAV_SAVED_BOOKS d-flex">
+                
+                <div class="saved-books__container w-100 d-flex mb-5 mt-5 flex-wrap">
+                    <div class="saved-books__container--title d-flex justify-content-between align-items-center pt-4 pb-3 pe-3 ps-3">
+                        <span class="fs-lg-20px fw-semibold ms-3">مورد علاقه‌ها</span>
 
+                        <div>
+                            <i class="fa-solid fa-chevron-down fs-lg-10px"></i>
+                            <span class="fs-lg-10px">نمایش همه</span>
+
+                        </div>
+                    </div>
+                    <div class="saved-books__container--books saved-books-title d-flex align-items-center FAV_SAVED_BOOKS">
+                        <!-- favourite books go here -->
+                    </div>
                 </div>
+
             </section>
             <!-- Saved books page (My library page) => saved book cards::end -->
 
