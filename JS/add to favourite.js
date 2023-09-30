@@ -2,47 +2,65 @@
 let booksInFavArr = [];
 
 
-let addedToFav = false;
+
 
 function addToFav(event) {
-    debugger
-    if (!addedToFav) {
-        const exisetdInFavBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-fav-book'));
+    
+    const exisetdInFavBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-fav-book'));
+
+    if (!isBookInFavorites(exisetdInFavBook)) {
         booksInFavArr.push(exisetdInFavBook);
-        renderAllFavBooks(booksInFavArr);
-        addedToFav = true; 
-        changeFavBtnStyle(event.target, addedToFav);
-        // changeFavBtnStyle(event.target);
+
     } else {
-        deleteFromFav(event.target);
-        addedToFav = false; 
-        changeFavBtnStyle(event.target, addedToFav);
+        removeBookFromFavorites(exisetdInFavBook);
     }
+    saveFavoritesInLocal(booksInFavArr);
+    renderAllFavBooks(booksInFavArr);
+    changeFavBtnStyle(event.target);
+}
+
+function isBookInFavorites(book) {
+    return booksInFavArr.some((favBook) => favBook.id === book.id);
+}
+
+function saveFavoritesInLocal(books) {
+    const favBooksArrString = JSON.stringify(books);
+    localStorage.setItem('favoriteBooks', favBooksArrString);
 }
 
 
 function changeFavBtnStyle(button) {
-    if(addedToFav){
-       button.classList.remove('fa-regular');
-       button.classList.add('fa-solid');
+    const exisetdInFavBook = BOOKS.find((book) => book.id === +button.getAttribute('data-fav-book'));
+
+    if (isBookInFavorites(exisetdInFavBook)) {
+        button.classList.remove('fa-regular');
+        button.classList.add('fa-solid');
     } else {
-       button.classList.remove('fa-solid');
-       button.classList.add('fa-regular');
+        button.classList.remove('fa-solid');
+        button.classList.add('fa-regular');
     }
 }
 
 
-function deleteFromFav(button) {
-    booksInFavArr = booksInFavArr.filter(book => book.id !== +button.getAttribute('data-fav-book'));
+
+
+window.addEventListener('load', () => {
     renderAllFavBooks(booksInFavArr);
+});
+
+
+
+function removeBookFromFavorites(book) {
+    booksInFavArr = booksInFavArr.filter((favBook) => favBook.id !== book.id);
 }
 
 
 
-
-
 function renderAllFavBooks(booksInFavArr) {
-    const favBooksCardTemplate = [... new Set(booksInFavArr)].map(book => {
+    const storedFavBooksString = localStorage.getItem('favoriteBooks');
+    const storedFavBooks = JSON.parse(storedFavBooksString) || [];
+
+    const favBooksCardTemplate = [... new Set(storedFavBooks)].map(book => {
         return  `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
             
         <div class="cards--bookmoc">
@@ -69,7 +87,7 @@ function renderAllFavBooks(booksInFavArr) {
     `
     })
 
-    FAV_SAVED_BOOKS.innerHTML = favBooksCardTemplate;
+    FAV_SAVED_BOOKS.innerHTML = favBooksCardTemplate.join('');
 }
 
 
