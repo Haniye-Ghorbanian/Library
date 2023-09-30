@@ -1,5 +1,6 @@
 // All books page
 const ALL_BOOKS_PAGE                = document.querySelector('.ALL_BOOKS_PAGE');
+const ALL_BOOKS_PAGE_BTN            = document.querySelector('.ALL_BOOKS_PAGE_BTN');
 
 
 // control panel section

@@ -3,12 +3,11 @@
 let booksInSavedArr = [];
 
 
-
 function addToLibrary(event) {
-    // debugger
+    debugger
     const exisetdInLibraryBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-book-id'));
     booksInSavedArr.push(exisetdInLibraryBook);
-    renderAllSavedBooks(booksInSavedArr);
+    saveBooksInLocal(booksInSavedArr);
     changeButtonStyle(event.target)
 }
 
@@ -22,7 +21,7 @@ function changeButtonStyle(button) {
     button.textContent = 'موجود در کتابخانه'
     
     let BIN_BTN;
-    if(binIsCreated == false) {
+    if(!binIsCreated) {
         BIN_BTN = document.createElement('i');
         BIN_BTN.className = `fa-solid fa-trash cards__content__buttons--bin MyIcon BIN_BTN`;  
 
@@ -32,24 +31,34 @@ function changeButtonStyle(button) {
 
         button.parentElement.style.width ='200px'
         button.parentElement.appendChild(BIN_BTN);
-        binIsCreated = true;
-    } else {
-        BIN_BTN.removeAttribute('onclick');
-    }
+        
+    } 
     
 }
 
 
-function handleTrashIconClick(button) {
-    debugger
-    booksInSavedArr = booksInSavedArr.filter(book => book.id !== +button.getAttribute('data-book-id'));
-    renderAllSavedBooks(booksInSavedArr);
+
+function saveBooksInLocal(books) {
+    const booksInSavedArrString = JSON.stringify(books);
+    localStorage.setItem('savedBooks', booksInSavedArrString);
+    renderAllSavedBooks(booksInSavedArrString)
 }
 
 
 
-function renderAllSavedBooks(booksInSavedArr) {
-    const savedBooksCardTemplate = [...new Set (booksInSavedArr)].map(book => {
+function handleTrashIconClick(button) {
+    
+    booksInSavedArr = booksInSavedArr.filter(book => book.id !== +button.getAttribute('data-book-id'));
+    saveBooksInLocal(booksInSavedArr);
+    renderAllSavedBooks();
+}
+
+
+
+function renderAllSavedBooks() {
+    const storedBooksString = localStorage.getItem('savedBooks');
+    const storedBooks = JSON.parse(storedBooksString) || [];
+    const savedBooksCardTemplate = [...new Set (storedBooks)].map(book => {
         return `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
             
         <div class="cards--bookmoc">
@@ -76,13 +85,14 @@ function renderAllSavedBooks(booksInSavedArr) {
     `
     })
 
-    ALL_SAVED_BOOKS.innerHTML = savedBooksCardTemplate;
+    ALL_SAVED_BOOKS.innerHTML = savedBooksCardTemplate.join('');
 
 }
 
 
-
-
+window.addEventListener('load', () => {
+    renderAllSavedBooks();
+});
 
 
 function handleAddToMyLibrary(buttonsContainers) {

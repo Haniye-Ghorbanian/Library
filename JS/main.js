@@ -1,7 +1,6 @@
 
 // view
 // Adding cards to LIBRARY
-
 function renderCards() {
    
 
@@ -49,13 +48,6 @@ function renderCards() {
     handleAddToMyLibrary(ADD_TO_LIBRARY_BTN);
     handleAddtoFav(ADD_TO_FAV_BTN);
 }
-
-
-
-
-
-
-
 
 
 
