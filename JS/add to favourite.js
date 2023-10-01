@@ -2,13 +2,13 @@
 let booksInFavArr = [];
 let bookId;
 
-function saveButtonState(buttonId, state) {
+function saveFavButtonState(buttonId, state) {
     localStorage.setItem(`buttonState_${buttonId}`, state);
 }
 
 
 
-function getButtonState(buttonId) {
+function getFavButtonState(buttonId) {
     return localStorage.getItem(`buttonState_${buttonId}`);
 }
 
@@ -19,7 +19,7 @@ function addToFav(event) {
     bookId = event.target.getAttribute('data-fav-book');
     const exisetdInFavBook = BOOKS.find(book => book.id === +bookId);
     const button = event.target;
-    const initialState = getButtonState(bookId);
+    const initialState = getFavButtonState(bookId);
     
 
     if (initialState == null || initialState == 'inactive') {
@@ -29,9 +29,9 @@ function addToFav(event) {
         
 
         if (initialState === 'active') {
-            saveButtonState(bookId, 'inactive');
+            saveFavButtonState(bookId, 'inactive');
         } else {
-            saveButtonState(bookId, 'active');
+            saveFavButtonState(bookId, 'active');
         }
 
         changeFavBtnStyle(exisetdInFavBook, button, bookId, initialState);
@@ -41,9 +41,9 @@ function addToFav(event) {
         saveFavoritesInLocal(booksInFavArr);
 
         if (initialState === 'active') {
-            saveButtonState(bookId, 'inactive');
+            saveFavButtonState(bookId, 'inactive');
         } else {
-            saveButtonState(bookId, 'active');
+            saveFavButtonState(bookId, 'active');
         }
         
         changeFavBtnStyle(exisetdInFavBook, button, bookId, initialState);
@@ -128,7 +128,7 @@ function renderAllFavBooks(booksInFavArr) {
 function handleAddtoFav(buttons) {
     buttons.forEach((button) => {
         const buttonId = button.getAttribute('data-fav-book');
-        const initialFavBtnState = getButtonState(buttonId);
+        const initialFavBtnState = getFavButtonState(buttonId);
     
         // Set the initial state of the button
         if (initialFavBtnState === 'active') {

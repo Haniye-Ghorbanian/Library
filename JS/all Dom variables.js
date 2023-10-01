@@ -13,6 +13,7 @@ const LANGUAGE_OPTIONS_CONTAINER    = document.querySelector('.LANGUAGE_OPTIONS_
 const LIBRARY                       = document.querySelector('.LIBRARY_PAGE_CONTAINER');
 let ADD_TO_LIBRARY_BTN;
 let ADD_TO_FAV_BTN;
+let CARD_BUTTONS_CONTAINER;
 
 
 // My library page

@@ -1,39 +1,67 @@
 
 // model 
 let booksInSavedArr = [];
+let parentElements = [];
+let buttonId = localStorage.getItem('buttonId');
+const parentElement = JSON.parse(localStorage.getItem('parent'));
+let childrenElements = localStorage.getItem('children');
+let childrenOuterHtml = ''
+
+
 
 
 function addToLibrary(event) {
     debugger
-    const exisetdInLibraryBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-book-id'));
+    buttonId = event.target.getAttribute('data-book-id');
+    localStorage.setItem('buttonId', buttonId)
+    const exisetdInLibraryBook = BOOKS.find(book => book.id === +buttonId);
     booksInSavedArr.push(exisetdInLibraryBook);
     saveBooksInLocal(booksInSavedArr);
-    changeButtonStyle(event.target)
+    changeButtonStyle(event.target, buttonId)
 }
 
 
 let binIsCreated = false;
-function changeButtonStyle(button) {
 
+function changeButtonStyle(button, buttonId) {
+    
     setTimeout(() => {
         button.textContent = 'افزودن به کتابخانه'
     }, 1500);
     button.textContent = 'موجود در کتابخانه'
     
-    let BIN_BTN;
-    if(!binIsCreated) {
-        BIN_BTN = document.createElement('i');
-        BIN_BTN.className = `fa-solid fa-trash cards__content__buttons--bin MyIcon BIN_BTN`;  
-
-        console.log(BIN_BTN)
+    
+    const existingBin = button.parentElement.querySelector('.BIN_BTN');
+    
+    if (!existingBin) {
+        const BIN_BTN = document.createElement('i');
+        BIN_BTN.className = `fa-solid fa-trash cards__content__buttons--bin MyIcon BIN_BTN`;
         BIN_BTN.addEventListener('click', () => handleTrashIconClick(button));
 
-
-        button.parentElement.style.width ='200px'
+        button.parentElement.style.width = '200px';
         button.parentElement.appendChild(BIN_BTN);
-        
-    } 
+
+        localStorage.setItem(`binIsCreated_${buttonId}`, 'true');
+    }
+    parentElement = button.parentNode;
+    console.log(parentElement)
+    localStorage.setItem('parent', JSON.stringify(parentElement));
+    childrenElements = parentElement.children;
+    const childrenArray  =Array.from(childrenElements)
+    childrenArray.map(child => {childrenOuterHtml += child.outerHTML} )
+    console.log(childrenOuterHtml)
+    localStorage.setItem('children', childrenOuterHtml)
     
+}
+
+
+
+// let containerHtml = '';
+function saveButtonState(children, parent, buttonId) {
+    if (children) {
+        parent.innerHTML = children;
+    }
+    localStorage.setItem(`binIsCreated_${buttonId}`, 'true');
 }
 
 
@@ -91,11 +119,25 @@ function renderAllSavedBooks() {
 
 
 window.addEventListener('load', () => {
+    debugger
+    
+    x(buttonId);
     renderAllSavedBooks();
 });
 
 
+
+
 function handleAddToMyLibrary(buttonsContainers) {
-    buttonsContainers.map(btn => btn.addEventListener('click', addToLibrary));
+    buttonsContainers.map(btn => {
+        btn.addEventListener('click', addToLibrary);
+    });
 }
 
+
+function x(buttonId) {
+    const binIsCreatedInLocal = localStorage.getItem(`binIsCreated_${buttonId}`);
+        if (binIsCreatedInLocal === 'true') {
+            saveButtonState(childrenElements, parentElement , buttonId);
+        } 
+} 
