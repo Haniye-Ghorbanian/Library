@@ -1,27 +1,60 @@
 // Model
 let booksInFavArr = [];
+let bookId;
 
+function saveButtonState(buttonId, state) {
+    localStorage.setItem(`buttonState_${buttonId}`, state);
+}
+
+
+
+function getButtonState(buttonId) {
+    return localStorage.getItem(`buttonState_${buttonId}`);
+}
 
 
 
 function addToFav(event) {
+    debugger
+    bookId = event.target.getAttribute('data-fav-book');
+    const exisetdInFavBook = BOOKS.find(book => book.id === +bookId);
+    const button = event.target;
+    const initialState = getButtonState(bookId);
     
-    const exisetdInFavBook = BOOKS.find(book => book.id === +event.target.getAttribute('data-fav-book'));
 
-    if (!isBookInFavorites(exisetdInFavBook)) {
+    if (initialState == null || initialState == 'inactive') {
         booksInFavArr.push(exisetdInFavBook);
+        saveFavoritesInLocal(booksInFavArr);
+
+        
+
+        if (initialState === 'active') {
+            saveButtonState(bookId, 'inactive');
+        } else {
+            saveButtonState(bookId, 'active');
+        }
+
+        changeFavBtnStyle(exisetdInFavBook, button, bookId, initialState);
 
     } else {
         removeBookFromFavorites(exisetdInFavBook);
+        saveFavoritesInLocal(booksInFavArr);
+
+        if (initialState === 'active') {
+            saveButtonState(bookId, 'inactive');
+        } else {
+            saveButtonState(bookId, 'active');
+        }
+        
+        changeFavBtnStyle(exisetdInFavBook, button, bookId, initialState);
     }
-    saveFavoritesInLocal(booksInFavArr);
+
     renderAllFavBooks(booksInFavArr);
-    changeFavBtnStyle(event.target);
 }
 
-function isBookInFavorites(book) {
-    return booksInFavArr.some((favBook) => favBook.id === book.id);
-}
+// function isBookInFavorites(book) {
+//     return booksInFavArr.some((favBook) => favBook.id === book.id);
+// }
 
 function saveFavoritesInLocal(books) {
     const favBooksArrString = JSON.stringify(books);
@@ -29,24 +62,28 @@ function saveFavoritesInLocal(books) {
 }
 
 
-function changeFavBtnStyle(button) {
-    const exisetdInFavBook = BOOKS.find((book) => book.id === +button.getAttribute('data-fav-book'));
 
-    if (isBookInFavorites(exisetdInFavBook)) {
+function changeFavBtnStyle(books, button, bookId, btnState) {
+    
+
+    if (btnState == null || btnState == 'inactive') {
         button.classList.remove('fa-regular');
         button.classList.add('fa-solid');
-    } else {
+        // localStorage.setItem(`buttonStyle_${bookId}`, 'fa-solid');
+    } else if (btnState === 'active') {
         button.classList.remove('fa-solid');
         button.classList.add('fa-regular');
+        // localStorage.setItem(`buttonStyle_${bookId}`, 'fa-regular')
     }
 }
 
 
 
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => { 
+   
     renderAllFavBooks(booksInFavArr);
-});
+})
 
 
 
@@ -54,14 +91,13 @@ function removeBookFromFavorites(book) {
     booksInFavArr = booksInFavArr.filter((favBook) => favBook.id !== book.id);
 }
 
-
-
 function renderAllFavBooks(booksInFavArr) {
     const storedFavBooksString = localStorage.getItem('favoriteBooks');
     const storedFavBooks = JSON.parse(storedFavBooksString) || [];
 
-    const favBooksCardTemplate = [... new Set(storedFavBooks)].map(book => {
-        return  `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
+    const favBooksCardTemplate = [...new Set(storedFavBooks)].map(book => {
+        
+        return `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
             
         <div class="cards--bookmoc">
 
@@ -83,16 +119,26 @@ function renderAllFavBooks(booksInFavArr) {
                
             </div>
         </div>
-        </div>
-    `
-    })
+        </div>`;
+    });
 
     FAV_SAVED_BOOKS.innerHTML = favBooksCardTemplate.join('');
 }
 
-
-
-
 function handleAddtoFav(buttons) {
-    buttons.map(btn => btn.addEventListener('click', addToFav))
+    buttons.forEach((button) => {
+        const buttonId = button.getAttribute('data-fav-book');
+        const initialFavBtnState = getButtonState(buttonId);
+    
+        // Set the initial state of the button
+        if (initialFavBtnState === 'active') {
+            button.classList.add('fa-solid');
+        } else {
+            button.classList.add('fa-regular');
+        }
+    
+        // Add a click event listener to toggle the button state
+        button.addEventListener('click', addToFav);
+    });
 }
+
