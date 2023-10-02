@@ -73,6 +73,10 @@ a:visited {
   right: 20%;
 }
 
+.w-80 {
+  width: 80% !important;
+}
+
 .mgc {
   position: relative;
   width: 16px;
@@ -485,4 +489,30 @@ a:visited {
 }
 .saved-books__container--books {
   height: 85%;
+}
+
+.single-book-page__book {
+  height: 600px;
+}
+.single-book-page__book--image {
+  padding: 40px;
+}
+.single-book-page__book--image img {
+  max-width: 100%;
+  max-height: 100%;
+  -webkit-box-shadow: -9px 12px 19px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: -9px 12px 19px 5px rgba(0, 0, 0, 0.25);
+  width: auto;
+  height: auto;
+  border-radius: 18px;
+}
+.single-book-page__book--info {
+  padding: 40px;
+}
+.single-book-page__book--info--tw {
+  margin-bottom: 100px;
+}
+.single-book-page__recommendations {
+  height: 500px;
+  background-color: aquamarine;
 }/*# sourceMappingURL=main.css.map */

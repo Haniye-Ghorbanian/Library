@@ -1,0 +1,37 @@
+.single-book-page {
+
+    &__book {
+        height: 600px;
+        // background-color: aqua;
+
+        &--image {
+            
+            padding: 40px;
+        }
+
+        &--image img {
+            max-width: 100%;
+            max-height: 100%;
+            box-shadow: -9px 12px 19px 5px rgba(0, 0, 0, 0.25);
+            width: auto;
+            height: auto;
+            border-radius: 18px;
+        }
+
+        &--info {
+            // background-color: brown;
+            padding: 40px;
+
+            &--tw{
+                margin-bottom: 100px;
+            }
+        }
+
+    }
+
+
+    &__recommendations {
+        height: 500px;
+        background-color: aquamarine;
+    }
+}

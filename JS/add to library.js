@@ -3,7 +3,7 @@
 let booksInSavedArr = [];
 let parentElements = [];
 let buttonId = localStorage.getItem('buttonId');
-const parentElement = JSON.parse(localStorage.getItem('parent'));
+// const parentElement = JSON.parse(localStorage.getItem('parent'));
 let childrenElements = localStorage.getItem('children');
 let childrenOuterHtml = ''
 
@@ -11,7 +11,7 @@ let childrenOuterHtml = ''
 
 
 function addToLibrary(event) {
-    debugger
+    // debugger
     buttonId = event.target.getAttribute('data-book-id');
     localStorage.setItem('buttonId', buttonId)
     const exisetdInLibraryBook = BOOKS.find(book => book.id === +buttonId);
@@ -119,7 +119,7 @@ function renderAllSavedBooks() {
 
 
 window.addEventListener('load', () => {
-    debugger
+    // debugger
     
     x(buttonId);
     renderAllSavedBooks();
@@ -138,6 +138,6 @@ function handleAddToMyLibrary(buttonsContainers) {
 function x(buttonId) {
     const binIsCreatedInLocal = localStorage.getItem(`binIsCreated_${buttonId}`);
         if (binIsCreatedInLocal === 'true') {
-            saveButtonState(childrenElements, parentElement , buttonId);
+            // saveButtonState(childrenElements, parentElement , buttonId);
         } 
 } 
