@@ -514,5 +514,8 @@ a:visited {
 }
 .single-book-page__recommendations {
   height: 500px;
-  background-color: aquamarine;
+}
+
+.swiper-height {
+  height: 100%;
 }/*# sourceMappingURL=main.css.map */
