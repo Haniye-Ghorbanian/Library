@@ -1,9 +1,9 @@
 function sliderMaker() {
     const topSwiperSlide = genres.map(genre => {
-        return `<swiper-slide class="d-flex justify-content-center align-items-center" data-genre="${persianToEnglish(genre)}">
+        return `<swiper-slide class="d-flex justify-content-center align-items-center HOME_CARD_SWIPER" data-genre="${persianToEnglish(genre)}">
         <div class="cards p-0 box-shadow-none m-3 d-flex align-items-center justify-content-between h-85 w-50 w-max-none">
 
-            <div class="cards__layout h-100 w-100 HOME_CARD_SWIPER d-flex justify-content-center align-items-center position-relative">
+            <div class="cards__layout h-100 w-100 d-flex justify-content-center align-items-center position-relative">
 
                 <div class="cards--bookmoc--image cards__layout--image">
                     <img class="cards--bookmoc--image--frame" src="./assets/images/${persianToEnglish(genre)}.jpg" alt="">
@@ -52,19 +52,27 @@ function sliderMaker() {
     SLIDER_CONTAINER.innerHTML = topSwiperSlide.join(''); 
 }
 
-// const homeSliderPromise = new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//         resolve();
-//     }, 300);
-// });
 
 
-// homeSliderPromise
-//     .then(sliderMaker)
+function getSlider() {
+    const HOME_CARD_SWIPER = Array.from(document.querySelectorAll('.HOME_CARD_SWIPER'));
+    console.log(HOME_CARD_SWIPER)
+}
+
+const homeSliderPromise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        resolve();
+    }, 0);
+});
+
+
+homeSliderPromise
+    .then(sliderMaker)
+    .then(getSlider)
 
 
 
-document.addEventListener('DOMContentLoaded', sliderMaker)
+
 
 
 
