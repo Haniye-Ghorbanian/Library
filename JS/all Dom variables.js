@@ -22,3 +22,9 @@ const MY_LIBRARY_PAGE               = document.querySelector('.MY_LIBRARY_PAGE')
 const ALL_SAVED_BOOKS               = document.querySelector('.ALL_SAVED_BOOKS');
 const FAV_SAVED_BOOKS               = document.querySelector('.FAV_SAVED_BOOKS');
 
+
+// Home page
+const HOME_CARD_SWIPER              = document.querySelector('.HOME_CARD_SWIPER');
+const HOME_CARD_SWIPER__INFO        = document.querySelector(' HOME_CARD_SWIPER__INFO');
+const SLIDER_CONTAINER              = document.querySelector('.SLIDER_CONTAINER');
+

@@ -27,6 +27,8 @@
     <script src="./JS/add to library.js" defer></script>
     <script src="./JS/add to favourite.js" defer></script>
     <script src="./JS/my library page.js" defer></script>
+    <script src="./JS/home page.js" defer></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
@@ -49,7 +51,7 @@
 
 
         <!-- Home page::start -->
-        <main class="MY_LIBRARY_PAGE w-100 position-absolute top-0 z-0 d-none">
+        <main class="HOME_PAGE w-100 position-absolute top-0 z-0">
 
 
             <!-- Home page => side menu (control panel)::start -->
@@ -86,112 +88,7 @@
 
 
 
-                    <div class="accordion control-panel__options__container categories padding-0"
-                        id="accordionPanelsStayOpenExample">
-                        <div class="accordion-item no-border">
-
-                            <div class="d-flex align-items-center">
-                                <i
-                                    class="control-panel__options__container--icon fa fa-bars d-flex align-items-center justify-content-center"></i>
-                                <h5 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button
-                                        class="accordion-button control-panel__options__container--title padding-0 box-shadow-none background-color-none color-black fs-lg-18px fw-medium"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                        aria-controls="panelsStayOpen-collapseOne">
-                                        قفسه‌های من
-                                    </button>
-                                </h5>
-                            </div>
-
-
-                            <div id="panelsStayOpen-collapseOne"
-                                class="control-panel__options__container--body accordion-collapse collapse show"
-                                aria-labelledby="panelsStayOpen-headingOne">
-                                <div class="accordion-body">
-                                    <!-- body of categories -->
-
-
-
-
-                                    <div class="accordion accordion-flush control-panel__options__container--body--options"
-                                        id="accordionFlushExample">
-                                        <div class="accordion-item no-border">
-                                            <h5 class="accordion-header accordion accordion-flush control-panel__options__container--body--options--genre"
-                                                id="flush-headingOne">
-                                                <button
-                                                    class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                                    aria-controls="flush-collapseOne">
-                                                    ژانر
-                                                </button>
-                                            </h5>
-                                            <div id="flush-collapseOne"
-                                                class="accordion-collapse collapse control-panel__options__container--body--options--genre--options"
-                                                aria-labelledby="flush-headingOne"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body GENRE_OPTIONS_CONTAINER">
-                                                    <!-- body of genre category -->
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <div class="accordion-item no-border">
-                                            <h5 class="accordion-header control-panel__options__container--body--options--language"
-                                                id="flush-headingTwo">
-                                                <button
-                                                    class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                                    aria-controls="flush-collapseTwo">
-                                                    زبان
-                                                </button>
-                                            </h5>
-                                            <div id="flush-collapseTwo"
-                                                class="accordion-collapse collapse control-panel__options__container--body--options--language--options"
-                                                aria-labelledby="flush-headingTwo"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body LANGUAGE_OPTIONS_CONTAINER">
-                                                    <!-- body of language category -->
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <div class="accordion-item no-border">
-                                            <h5 class="accordion-header control-panel__options__container--body--options--year"
-                                                id="flush-headingThree">
-                                                <button
-                                                    class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                                    aria-controls="flush-collapseThree">
-                                                    سال
-                                                </button>
-                                            </h5>
-                                            <div id="flush-collapseThree"
-                                                class="accordion-collapse collapse control-panel__options__container--body--options--year--options"
-                                                aria-labelledby="flush-headingThree"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body">
-                                                    <!-- body of year category -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                 
 
 
 
@@ -217,36 +114,93 @@
 
 
             <!-- Home page => saved book cards::start -->
-            <section class="saved-books position-absolute  SAVED_BOOKS_CONTAINER top-0 right-20">
+            <section class="saved-books position-absolute w-75 top-0 right-20">
 
-                <div class="saved-books__container w-100 d-flex mb-5 mt-5 flex-wrap">
+                <div class="saved-books__container w-100 d-flex flex-column mb-5 mt-5 bg-none">
                     <div
-                        class="saved-books__container--title d-flex justify-content-between align-items-center pt-4 pb-3 pe-3 ps-3">
-                        <span class="fs-lg-20px fw-semibold ms-3">همه کتاب‌ها</span>
+                        class="saved-books__container--title border-bottom-none d-flex justify-content-between align-items-center pt-4 pb-3 pe-3 ps-3">
+
+                        <span class="fs-lg-20px fw-semibold ms-3">دسته‌بندی‌‌ها</span>
 
                         <div>
-                            <i class="fa-solid fa-chevron-down fs-lg-10px"></i>
-                            <span class="fs-lg-10px">نمایش همه</span>
-
+                            <span class="fs-lg-10px">همه کتاب‌ها</span>
+                            <i class="fa-solid fa-chevron-left fs-lg-10px"></i>
                         </div>
+
                     </div>
+
                     <div
-                        class="saved-books__container--books align-items-center saved-books-title d-flex align-items-center ALL_SAVED_BOOKS">
-                        <!-- All saved books go here -->
+                        class="saved-books__container--books align-items-center saved-books-title d-flex align-items-center">
+                        <!-- All categorised books go here -->
+
+                        <swiper-container class="mySwiper swiper-height w-inherit SLIDER_CONTAINER " pagination="true" pagination-clickable="true"
+                            space-between="30" slides-per-view="2">
+
+                            <!-- slider book cards go here -->
+
+
+                            <swiper-slide class="d-flex justify-content-center align-items-center">
+                                <div class="cards p-0 box-shadow-none m-3 d-flex align-items-center justify-content-between h-85 w-50 w-max-none">
+
+                                    <div class="cards__layout h-100 w-100 HOME_CARD_SWIPER">
+
+                                        <div class="cards--bookmoc--image cards__layout--image">
+                                            <img class="cards--bookmoc--image--frame" src="./assets/images/1.jpg" alt="">
+                                        </div>
+
+                                    </div>
+
+                                    
+
+                                    <div class="cards__info HOME_CARD_SWIPER_INFO d-none">
+
+                                        <div class="cards__info--tw d-flex flex-column align-items-center justify-content-between">
+                                            <span class="cards__info--tw--title fs-lg-20px fw-bold">ویس و رامین</span>
+                                            <span class="cards__info--tw--writer fs-lg-18px fw-semibold">هرچی</span>
+                                        </div>
+
+
+                                        <div class="cards__info--lgd d-flex align-items-center justify-content-between">
+
+                                            <span class="cards__info--lgd--language fs-lg-16px fw-normal">فارسی</span>
+                                            <span class="cards__info--lgd--genre fs-lg-16px fw-normal">ادبیات</span>
+                                            <span class="cards__info--lgd--date fs-lg-16px fw-normal">۶۷۰</span>
+                                        </div>
+
+
+                                        <div class="cards__content__buttons CARD_BUTTONS_CONTAINER">
+
+                                            <button class="cards__content__buttons--add Mybtn ADD_TO_LIBRARY_BTN" data-book-id="${book.id}">افزودن به کتابخانه</button>
+                                            
+                                            <i class="fa-regular fa-heart cards__content__buttons--fav MyIcon ADD_TO_FAV_BTN" data-fav-book="${book.id}"></i>
+                                            
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </swiper-slide>
+
+
+
+                           
+
+
+                        </swiper-container>
                     </div>
                 </div>
 
 
-                <div class="saved-books__container w-100 d-flex mb-5 mt-5 flex-wrap">
+
+
+
+
+
+
+                <div class="saved-books__container w-100 d-flex mb-5 mt-5 flex-column">
                     <div
                         class="saved-books__container--title d-flex justify-content-between align-items-center pt-4 pb-3 pe-3 ps-3">
-                        <span class="fs-lg-20px fw-semibold ms-3">مورد علاقه‌ها</span>
-
-                        <div>
-                            <i class="fa-solid fa-chevron-down fs-lg-10px"></i>
-                            <span class="fs-lg-10px">نمایش همه</span>
-
-                        </div>
+                        <span class="fs-lg-20px fw-semibold ms-3">آخرین مشاهده‌‌ها</span>
                     </div>
                     <div
                         class="saved-books__container--books saved-books-title d-flex align-items-center FAV_SAVED_BOOKS">
@@ -467,7 +421,7 @@
 
 
         <!-- single book page::start -->
-        <main class="single-book-page w-100 position-absolute top-0 z-n1">
+        <main class="single-book-page w-100 position-absolute top-0 z-n1 d-none">
 
 
             <!-- single book page => side menu (control panel)::start -->
@@ -632,8 +586,11 @@
 
 
 
-
+            <!-- single book page => book and swiper::start -->
             <div class="d-flex flex-column position-absolute right-20 top-0 w-75 pt-5 pb-5">
+
+
+                <!-- single book page => book and swiper => book::start -->
                 <section class="single-book-page__book mb-5 d-flex justify-content-between align-items-center w-100">
 
                     <div
@@ -661,13 +618,14 @@
                         <img class="" src="./assets/images/11.jpg" alt="">
                     </div>
                 </section>
+                <!-- single book page => book and swiper => book::end -->
 
 
 
 
 
 
-
+                <!-- single book page => book and swiper => swiper::start -->
                 <section class="single-book-page__recommendations w-100 mb-5">
                     <div class="saved-books__container w-100 d-flex mb-5 mt-5 flex-column h-100">
                         <div
@@ -726,7 +684,13 @@
                         </div>
                     </div>
                 </section>
+                <!-- single book page => book and swiper => end::start -->
+
+
             </div>
+            <!-- single book page => book and swiper::end -->
+
+
         </main>
         <!-- single book page::end -->
 

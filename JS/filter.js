@@ -1,5 +1,8 @@
 // Models
+let genres;
+let languages;
 let GENRE_CHECKBOXES;
+let languageOptions;
 let genreOptions;
 let filteredBooksOnLanguage;
 let generalFilteredBooks = [];
