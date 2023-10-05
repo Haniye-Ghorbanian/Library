@@ -16,6 +16,7 @@ function getFavButtonState(buttonId) {
 
 function addToFav(event) {
     debugger
+    event.stopPropagation();
     bookId = event.target.getAttribute('data-fav-book');
     const exisetdInFavBook = BOOKS.find(book => book.id === +bookId);
     const button = event.target;

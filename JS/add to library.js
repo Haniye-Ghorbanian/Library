@@ -12,6 +12,7 @@ let childrenOuterHtml = ''
 
 function addToLibrary(event) {
     // debugger
+    event.stopPropagation();
     buttonId = event.target.getAttribute('data-book-id');
     localStorage.setItem('buttonId', buttonId)
     const exisetdInLibraryBook = BOOKS.find(book => book.id === +buttonId);
@@ -44,12 +45,12 @@ function changeButtonStyle(button, buttonId) {
         localStorage.setItem(`binIsCreated_${buttonId}`, 'true');
     }
     parentElement = button.parentNode;
-    console.log(parentElement)
+    // console.log(parentElement)
     localStorage.setItem('parent', JSON.stringify(parentElement));
     childrenElements = parentElement.children;
     const childrenArray  =Array.from(childrenElements)
     childrenArray.map(child => {childrenOuterHtml += child.outerHTML} )
-    console.log(childrenOuterHtml)
+    // console.log(childrenOuterHtml)
     localStorage.setItem('children', childrenOuterHtml)
     
 }

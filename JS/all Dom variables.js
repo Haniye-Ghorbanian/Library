@@ -28,3 +28,8 @@ const HOME_CARD_SWIPER              = document.querySelector('.HOME_CARD_SWIPER'
 const HOME_CARD_SWIPER__INFO        = document.querySelector(' HOME_CARD_SWIPER__INFO');
 const SLIDER_CONTAINER              = document.querySelector('.SLIDER_CONTAINER');
 
+
+// Single book page
+const SINGLE_BOOK_PAGE              =  document.querySelector('.SINGLE_BOOK_PAGE');
+let SINGLE_BOOK;                  
+

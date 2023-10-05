@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Library</title>
+    <!-- <meta http-equiv="Content-Security-Policy" content="font-src https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/ data:"> -->
     <base href="/">
 
 
@@ -23,6 +24,7 @@
     <script src="./JS/all Dom variables.js" defer></script>
     <script src="./JS/utilities.js"></script>
     <script src="./JS/main.js" defer></script>
+    <script src="./JS/single book.js"></script>
     <script src="./JS/filter.js" defer></script>
     <script src="./JS/add to library.js" defer></script>
     <script src="./JS/add to favourite.js" defer></script>
@@ -46,12 +48,13 @@
 
 
 <body>
+    
     <!-- base container::start -->
     <main class="base-container position-relative w-100">
 
 
         <!-- Home page::start -->
-        <main class="HOME_PAGE w-100 position-absolute top-0 z-0">
+        <main class="HOME_PAGE w-100 position-absolute d-none top-0 z-0">
 
 
             <!-- Home page => side menu (control panel)::start -->
@@ -231,7 +234,7 @@
 
 
         <!-- All books page::start -->
-        <main class="ALL_BOOKS_PAGE all-books-page w-100 position-absolute top-0 z-n1 d-none">
+        <main class="ALL_BOOKS_PAGE all-books-page w-100 position-absolute top-0 z-n1">
             <!-- All books page => control panel(right side of the page)::start -->
             <aside class="control-panel end-0 top-0 position-fixed h-100 ">
 
@@ -421,7 +424,7 @@
 
 
         <!-- single book page::start -->
-        <main class="single-book-page w-100 position-absolute top-0 z-n1 d-none">
+        <main class="single-book-page SINGLE_BOOK_PAGE w-100 position-absolute top-0 z-n1 d-none">
 
 
             <!-- single book page => side menu (control panel)::start -->

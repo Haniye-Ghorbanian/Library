@@ -48,7 +48,6 @@ function sliderMaker() {
 `
     })
 
-
     SLIDER_CONTAINER.innerHTML = topSwiperSlide.join(''); 
 }
 
@@ -56,6 +55,9 @@ function sliderMaker() {
 
 function getSlider() {
     const HOME_CARD_SWIPER = Array.from(document.querySelectorAll('.HOME_CARD_SWIPER'));
+    HOME_CARD_SWIPER.map(card => card.addEventListener('mouseenter', ()=> {
+        console.log(event.target.getAttribute('data-genre'))
+    }))
     console.log(HOME_CARD_SWIPER)
 }
 
@@ -69,6 +71,7 @@ const homeSliderPromise = new Promise((resolve, reject) => {
 homeSliderPromise
     .then(sliderMaker)
     .then(getSlider)
+    .then()
 
 
 
