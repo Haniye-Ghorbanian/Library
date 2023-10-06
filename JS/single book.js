@@ -14,21 +14,40 @@ function handleRoutToSingleBook(event) {
 }
 
 
+
+
+function handleRoutToSingleBook2(event) {
+    debugger
+    event.preventDefault();
+    const singleBookHref = event.target.closest('.SIMILAR_BOOK').href;
+    const bookId = +event.target.closest('.SIMILAR_BOOK').getAttribute('data-book-id');
+    console.log(bookId)
+    console.log(singleBookHref)
+    history.pushState(null, null, singleBookHref);
+    findRelatedBookCard(bookId);
+}
+
+
+
 function showSingleBookPage() {
     ALL_BOOKS_PAGE.classList.add('d-none');
-    SINGLE_BOOK_PAGE.classList.remove('d-none')
+    SINGLE_BOOK_PAGE.classList.remove('d-none');
+    
 }
 
 
 function findRelatedBookCard(id) {
    const relatedBook = BOOKS.find(book => book.id === id);
    renderBookCard(relatedBook);
-   findSimilarBooks(relatedBook, id);
+   if(similarBooks.length===0){
+       findSimilarBooks(relatedBook, id);
+   }
 }
 
 
 function renderBookCard(book) {
-    SINGLE_BOOK_PAGE_BOOK.innerHTML = `
+    SINGLE_BOOK_PAGE_BOOK.innerHTML = '';
+    const bookCard = `
     
         <div class="single-book-page__book--info w-50 h-100 d-flex justify-content-center align-items-center flex-column">
             <div class="single-book-page__book--info--tw text-center">
@@ -64,30 +83,33 @@ function renderBookCard(book) {
         </div>
 
     `
+    SINGLE_BOOK_PAGE_BOOK.innerHTML = bookCard;
 }
 
-
-function startSingleBook(singleBook) {
-    console.log(singleBook)
-    singleBook.map(book => book.addEventListener('click', handleRoutToSingleBook))
-}
 
 
 function findSimilarBooks(relatedBook, currentId) {
-   BOOKS.filter(book =>  {if(book.genre === relatedBook.genre) {
-                        similarBooks.push(book);
-                         }});
-   const currentBookIndex = similarBooks.findIndex(book => book.id === currentId);
-   similarBooks.splice(currentBookIndex, 1); 
+    if(similarBooks.length === 0){
+        BOOKS.filter(book =>  {if(book.genre === relatedBook.genre) {similarBooks.push(book);}});
+        const currentBookIndex = similarBooks.findIndex(book => book.id === currentId);
+        similarBooks.splice(currentBookIndex, 1); 
+    }
+
    console.log(similarBooks);
    renderSimilarBooks(similarBooks);
 }
 
 
+
+
+
+
 function renderSimilarBooks() {
+    
     const renderedBooks = similarBooks.map(book => {
         return `
-            <swiper-slide>
+            <swiper-slide class="">
+            <a href="./book${book.id}" class="cards box-shadow-none m-3 d-flex flex-column align-items-center justify-content-center SIMILAR_BOOK" data-book-id="${book.id}">
                 <div
                     class="cards box-shadow-none m-3 d-flex flex-column align-items-center justify-content-center">
         
@@ -126,12 +148,25 @@ function renderSimilarBooks() {
         
                     </div>
                 </div>
+                </a>
             </swiper-slide>`
         })
 
 
         SIMILAR_BOOKS_CONTAINER.innerHTML = renderedBooks.join('');
+        const SIMILAR_BOOKS = Array.from(document.querySelectorAll('.SIMILAR_BOOK'));
+        SIMILAR_BOOKS.map(book => book.addEventListener('click', handleRoutToSingleBook2));
+        
+        
+        
 }
 
 
+handleRouteChange();
 document.addEventListener("DOMContentLoaded", startSingleBook);
+function startSingleBook(singleBook) {
+    singleBook.map(book => book.addEventListener('click', handleRoutToSingleBook))
+}
+
+
+
