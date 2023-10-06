@@ -31,5 +31,6 @@ const SLIDER_CONTAINER              = document.querySelector('.SLIDER_CONTAINER'
 
 // Single book page
 const SINGLE_BOOK_PAGE              =  document.querySelector('.SINGLE_BOOK_PAGE');
+const SINGLE_BOOK_PAGE_BOOK         =  document.querySelector('.SINGLE_BOOK_PAGE_BOOK');
 let SINGLE_BOOK;                  
 

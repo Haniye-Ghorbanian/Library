@@ -30,7 +30,7 @@
     <script src="./JS/add to favourite.js" defer></script>
     <script src="./JS/my library page.js" defer></script>
     <script src="./JS/home page.js" defer></script>
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
@@ -48,7 +48,7 @@
 
 
 <body>
-    
+
     <!-- base container::start -->
     <main class="base-container position-relative w-100">
 
@@ -91,7 +91,7 @@
 
 
 
-                 
+
 
 
 
@@ -136,28 +136,31 @@
                         class="saved-books__container--books align-items-center saved-books-title d-flex align-items-center ">
                         <!-- All categorised books go here -->
 
-                        <swiper-container class="mySwiper swiper-height w-inherit SLIDER_CONTAINER "
-                            space-between="30" slides-per-view="2" loop="true" navigation="true" keyboard="true">
- 
+                        <swiper-container class="mySwiper swiper-height w-inherit SLIDER_CONTAINER " space-between="30"
+                            slides-per-view="2" loop="true" navigation="true" keyboard="true">
+
                             <!-- slider book cards go here -->
 
 
                             <swiper-slide class="d-flex justify-content-center align-items-center">
-                                <div class="cards p-0 box-shadow-none m-3 d-flex align-items-center justify-content-between h-85 w-50 w-max-none">
+                                <div
+                                    class="cards p-0 box-shadow-none m-3 d-flex align-items-center justify-content-between h-85 w-50 w-max-none">
 
                                     <div class="cards__layout h-100 w-100 HOME_CARD_SWIPER">
 
                                         <div class="cards--bookmoc--image cards__layout--image">
-                                            <img class="cards--bookmoc--image--frame" src="./assets/images/1.jpg" alt="">
+                                            <img class="cards--bookmoc--image--frame" src="./assets/images/1.jpg"
+                                                alt="">
                                         </div>
 
                                     </div>
 
-                                    
+
 
                                     <div class="cards__info HOME_CARD_SWIPER_INFO d-none">
 
-                                        <div class="cards__info--tw d-flex flex-column align-items-center justify-content-between">
+                                        <div
+                                            class="cards__info--tw d-flex flex-column align-items-center justify-content-between">
                                             <span class="cards__info--tw--title fs-lg-20px fw-bold">ویس و رامین</span>
                                             <span class="cards__info--tw--writer fs-lg-18px fw-semibold">هرچی</span>
                                         </div>
@@ -173,10 +176,12 @@
 
                                         <div class="cards__content__buttons CARD_BUTTONS_CONTAINER">
 
-                                            <button class="cards__content__buttons--add Mybtn ADD_TO_LIBRARY_BTN" data-book-id="${book.id}">افزودن به کتابخانه</button>
-                                            
-                                            <i class="fa-regular fa-heart cards__content__buttons--fav MyIcon ADD_TO_FAV_BTN" data-fav-book="${book.id}"></i>
-                                            
+                                            <button class="cards__content__buttons--add Mybtn ADD_TO_LIBRARY_BTN"
+                                                data-book-id="${book.id}">افزودن به کتابخانه</button>
+
+                                            <i class="fa-regular fa-heart cards__content__buttons--fav MyIcon ADD_TO_FAV_BTN"
+                                                data-fav-book="${book.id}"></i>
+
                                         </div>
 
                                     </div>
@@ -186,7 +191,7 @@
 
 
 
-                           
+
 
 
                         </swiper-container>
@@ -594,24 +599,33 @@
 
 
                 <!-- single book page => book and swiper => book::start -->
-                <section class="single-book-page__book mb-5 d-flex justify-content-between align-items-center w-100">
+                <section class="single-book-page__book mb-5 d-flex justify-content-between align-items-center w-100 SINGLE_BOOK_PAGE_BOOK">
 
                     <div
                         class="single-book-page__book--info w-50 h-100 d-flex justify-content-center align-items-center flex-column">
                         <div class="single-book-page__book--info--tw text-center">
-                            <h1 class="single-book-page__book--info--tw--title fs-lg-70px fw-bold mb-4">ضیافت</h1>
+                            <h1 class="single-book-page__book--info--tw--title fs-lg-55px fw-bold mb-4">ضیافت</h1>
 
-                            <h2 class="single-book-page__book--info--tw--author fs-lg-46px fw-semibold">افلاطون</h2>
+                            <h2 class="single-book-page__book--info--tw--author fs-lg-35px fw-semibold">افلاطون</h2>
                         </div>
 
 
 
-                        <div class="single-book-page__book--info--gld d-flex flex-row w-80 justify-content-evenly">
-                            <h3 class="single-book-page__book--info--gld--genre fs-lg-25px fw-normal">فلسفه</h3>
+                        <div class="single-book-page__book--info--gld d-flex flex-row w-80 justify-content-evenly mb-5">
+                            <h3 class="single-book-page__book--info--gld--genre fs-lg-22px fw-normal">فلسفه</h3>
 
-                            <h3 class="single-book-page__book--info--gld--language fs-lg-25px fw-normal">یونانی</h3>
+                            <h3 class="single-book-page__book--info--gld--language fs-lg-22px fw-normal">یونانی</h3>
 
-                            <h3 class="single-book-page__book--info--gld--date fs-lg-25px fw-normal">385</h3>
+                            <h3 class="single-book-page__book--info--gld--date fs-lg-22px fw-normal">385</h3>
+                        </div>
+
+
+                        <div class="single-book-page__book--info--btns d-flex flex-row w-80 justify-content-evenly">
+                            <button class="cards__content__buttons--add fs-lg-18px Mybtn ADD_TO_LIBRARY_BTN"
+                                data-book-id="${book.id}">افزودن به کتابخانه</button>
+
+                            <i class="fa-regular fa-heart cards__content__buttons--fav text-white fs-lg-18px MyIcon ADD_TO_FAV_BTN"
+                                data-fav-book="${book.id}"></i>
                         </div>
 
                     </div>
