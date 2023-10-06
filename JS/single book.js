@@ -74,9 +74,11 @@ function startSingleBook(singleBook) {
 
 
 function findSimilarBooks(relatedBook, currentId) {
-   similarBooks = BOOKS.filter(book => book.genre === relatedBook.genre);
-   const currentBookIndex  = BOOKS.findIndex(book => book.id === currentId);
-   similarBooks.splice(currentBookIndex, 1)
+   BOOKS.filter(book =>  {if(book.genre === relatedBook.genre) {
+                        similarBooks.push(book);
+                         }});
+   const currentBookIndex = similarBooks.findIndex(book => book.id === currentId);
+   similarBooks.splice(currentBookIndex, 1); 
    console.log(similarBooks);
    renderSimilarBooks(similarBooks);
 }
