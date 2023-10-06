@@ -93,6 +93,10 @@ a:visited {
   height: 85% !important;
 }
 
+.h-90 {
+  height: 90% !important;
+}
+
 .bg-none {
   background-color: transparent !important;
 }
@@ -527,7 +531,7 @@ svg {
   width: 70%;
 }
 .saved-books__container {
-  height: 500px;
+  height: 700px;
   background-color: white;
   border-radius: 10px;
 }
@@ -538,10 +542,6 @@ svg {
   height: 15%;
   border-bottom: 0.5px solid rgba(212, 212, 210, 0.6588235294);
 }
-.saved-books__container--books {
-  height: 85%;
-}
-
 .single-book-page__book {
   height: 600px;
 }

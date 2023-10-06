@@ -4,7 +4,7 @@
     
 
     &__container {
-        height: 500px;
+        height: 700px;
         background-color: white;
         border-radius: 10px;
         
@@ -16,15 +16,11 @@
 
         &--title {
             height: 15%;
-           
             border-bottom: .5px solid #d4d4d2a8;
         }
 
         &--books {
-            height: 85%;
-            
+            // height: 85%;
         }
-
     }
-
 }

@@ -1,31 +1,29 @@
 let similarBooks = [];
+let lastSeen = [];
 
 
 function handleRoutToSingleBook(event) {
-    debugger
+    
     event.preventDefault();
-    const singleBookHref = event.target.closest('.SINGLE_BOOK').href;
-    const bookId = +event.target.closest('.SINGLE_BOOK').getAttribute('data-book-id');
-    console.log(bookId)
-    console.log(singleBookHref)
-    history.pushState(null, null, singleBookHref);
-    findRelatedBookCard(bookId);
-    showSingleBookPage();
+    if(event.target.closest('.SINGLE_BOOK')){
+        const singleBookHref = event.target.closest('.SINGLE_BOOK').href;
+        lastSeen.push(event.target.closest('.SIMILAR_BOOK'));
+        const bookId = +event.target.closest('.SINGLE_BOOK').getAttribute('data-book-id');
+        history.pushState(null, null, singleBookHref);
+        findRelatedBookCard(bookId);
+        showSingleBookPage();
+    } 
+
+    else {
+        const singleBookHref = event.target.closest('.SIMILAR_BOOK').href;
+        lastSeen.push(event.target.closest('.SIMILAR_BOOK'));
+        const bookId = +event.target.closest('.SIMILAR_BOOK').getAttribute('data-book-id');
+        history.pushState(null, null, singleBookHref);
+        findRelatedBookCard(bookId);
+    }
+     
 }
 
-
-
-
-function handleRoutToSingleBook2(event) {
-    debugger
-    event.preventDefault();
-    const singleBookHref = event.target.closest('.SIMILAR_BOOK').href;
-    const bookId = +event.target.closest('.SIMILAR_BOOK').getAttribute('data-book-id');
-    console.log(bookId)
-    console.log(singleBookHref)
-    history.pushState(null, null, singleBookHref);
-    findRelatedBookCard(bookId);
-}
 
 
 
@@ -38,6 +36,7 @@ function showSingleBookPage() {
 
 function findRelatedBookCard(id) {
    const relatedBook = BOOKS.find(book => book.id === id);
+  
    renderBookCard(relatedBook);
    if(similarBooks.length===0){
        findSimilarBooks(relatedBook, id);
@@ -84,6 +83,7 @@ function renderBookCard(book) {
 
     `
     SINGLE_BOOK_PAGE_BOOK.innerHTML = bookCard;
+    console.log(lastSeen);
 }
 
 
@@ -155,14 +155,14 @@ function renderSimilarBooks() {
 
         SIMILAR_BOOKS_CONTAINER.innerHTML = renderedBooks.join('');
         const SIMILAR_BOOKS = Array.from(document.querySelectorAll('.SIMILAR_BOOK'));
-        SIMILAR_BOOKS.map(book => book.addEventListener('click', handleRoutToSingleBook2));
+        SIMILAR_BOOKS.map(book => book.addEventListener('click', handleRoutToSingleBook));
         
         
         
 }
 
 
-handleRouteChange();
+
 document.addEventListener("DOMContentLoaded", startSingleBook);
 function startSingleBook(singleBook) {
     singleBook.map(book => book.addEventListener('click', handleRoutToSingleBook))

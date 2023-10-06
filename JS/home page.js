@@ -1,6 +1,6 @@
 function sliderMaker() {
     const topSwiperSlide = genres.map(genre => {
-        return `<swiper-slide class="d-flex justify-content-center align-items-center HOME_CARD_SWIPER" data-genre="${persianToEnglish(genre)}">
+        return `<swiper-slide class="d-flex justify-content-center align-items-center h-90 HOME_CARD_SWIPER" data-genre="${persianToEnglish(genre)}">
         <div class="cards p-0 box-shadow-none m-3 d-flex align-items-center justify-content-between h-85 w-50 w-max-none">
 
             <div class="cards__layout h-100 w-100 d-flex justify-content-center align-items-center position-relative">
@@ -55,10 +55,10 @@ function sliderMaker() {
 
 function getSlider() {
     const HOME_CARD_SWIPER = Array.from(document.querySelectorAll('.HOME_CARD_SWIPER'));
-    HOME_CARD_SWIPER.map(card => card.addEventListener('mouseenter', ()=> {
-        console.log(event.target.getAttribute('data-genre'))
-    }))
-    console.log(HOME_CARD_SWIPER)
+    // HOME_CARD_SWIPER.map(card => card.addEventListener('mouseenter', ()=> {
+    //     console.log(event.target.getAttribute('data-genre'))
+    // }))
+    
 }
 
 const homeSliderPromise = new Promise((resolve, reject) => {
