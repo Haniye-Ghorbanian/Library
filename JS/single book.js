@@ -1,4 +1,4 @@
-
+let similarBooks = [];
 
 
 function handleRoutToSingleBook(event) {
@@ -9,10 +9,9 @@ function handleRoutToSingleBook(event) {
     console.log(bookId)
     console.log(singleBookHref)
     history.pushState(null, null, singleBookHref);
-    findRelatedBookCard(bookId)
-    showSingleBookPage()
+    findRelatedBookCard(bookId);
+    showSingleBookPage();
 }
-
 
 
 function showSingleBookPage() {
@@ -20,9 +19,11 @@ function showSingleBookPage() {
     SINGLE_BOOK_PAGE.classList.remove('d-none')
 }
 
+
 function findRelatedBookCard(id) {
    const relatedBook = BOOKS.find(book => book.id === id);
    renderBookCard(relatedBook);
+   findSimilarBooks(relatedBook, id);
 }
 
 
@@ -65,11 +66,70 @@ function renderBookCard(book) {
     `
 }
 
+
 function startSingleBook(singleBook) {
     console.log(singleBook)
     singleBook.map(book => book.addEventListener('click', handleRoutToSingleBook))
 }
 
+
+function findSimilarBooks(relatedBook, currentId) {
+   similarBooks = BOOKS.filter(book => book.genre === relatedBook.genre);
+   const currentBookIndex  = BOOKS.findIndex(book => book.id === currentId);
+   similarBooks.splice(currentBookIndex, 1)
+   console.log(similarBooks);
+   renderSimilarBooks(similarBooks);
+}
+
+
+function renderSimilarBooks() {
+    const renderedBooks = similarBooks.map(book => {
+        return `
+            <swiper-slide>
+                <div
+                    class="cards box-shadow-none m-3 d-flex flex-column align-items-center justify-content-center">
+        
+                    <div class="cards--bookmoc">
+        
+                        <div class="cards--bookmoc--image">
+                            <img class="cards--bookmoc--image--frame" src="./assets/images/${book.imgSrc}" alt="">
+                        </div>
+        
+        
+                    </div>
+                    <div class="cards__content">
+                        <h3
+                            class="cards__content--title fs-lg-20px fs-md-18px fs-sm-16px mb-2 mt-3">
+                            ${book.title}
+                        </h3>
+                        <h4
+                            class="cards__content--author mb-3 fw-normal fs-lg-16px fs-md-14px fs-sm-12px">
+                            ${book.author}
+                        </h4>
+        
+                        <div class="cards__content__info mb-2 w-100">
+                            <h5
+                                class="cards__content__info--published-date card-info fs-lg-14px fs-md-12px fs-sm-10px fw-light">
+                                ${book.published_date}
+                            </h5>
+                            <h5
+                                class="cards__content__info--genre card-info fs-lg-14px fs-md-12px fs-sm-10px fw-light">
+                                ${book.genre}
+                            </h5>
+                            <h5
+                                class="cards__content__info--language card-info fs-lg-14px fs-md-12px fs-sm-10px fw-light">
+                                ${book.language}
+                            </h5>
+                        </div>
+        
+                    </div>
+                </div>
+            </swiper-slide>`
+        })
+
+
+        SIMILAR_BOOKS_CONTAINER.innerHTML = renderedBooks.join('');
+}
 
 
 document.addEventListener("DOMContentLoaded", startSingleBook);
