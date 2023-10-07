@@ -69,8 +69,7 @@
                         <div
                             class="control-panel__options__container home-page d-flex justify-content-start align-items-center">
 
-                            <i
-                                class="control-panel__options__container--icon fa-solid fa-home d-flex justify-content-center align-items-center"></i>
+                            <i class="control-panel__options__container--icon fa-solid fa-home d-flex justify-content-center align-items-center"></i>
 
 
 
@@ -254,21 +253,22 @@
             <!-- All books page => control panel(right side of the page)::start -->
             <aside class="control-panel end-0 top-0 position-fixed h-100 ">
 
+                <a href="/" class="TO_HOME_PAGE_BTN">
+                    <section class="control-panel__options">
 
-                <section class="control-panel__options">
+                        <div
+                            class="control-panel__options__container all-books d-flex justify-content-start align-items-center">
 
-                    <div
-                        class="control-panel__options__container all-books d-flex justify-content-start align-items-center">
-
-                        <i
-                            class="control-panel__options__container--icon fa-solid fa-home d-flex justify-content-center align-items-center"></i>
-
-
-                        <h5 class="control-panel__options__container--title fs-lg-18px ">صفحه اصلی</h5>
-                    </div>
+                            <i
+                                class="control-panel__options__container--icon fa-solid fa-home d-flex justify-content-center align-items-center"></i>
 
 
+                            <h5 class="control-panel__options__container--title fs-lg-18px ">صفحه اصلی</h5>
+                        </div>
+                </a>
 
+
+                <a href="/allBooks" class="TO_ALL_BOOKS_PAGE_BTN">
                     <div
                         class="control-panel__options__container all-books d-flex justify-content-start align-items-center">
 
@@ -276,131 +276,129 @@
                             class="control-panel__options__container--icon fa-solid fa-book d-flex justify-content-center align-items-center"></i>
 
 
-                        <a href="/allBooks">
-                            <h5 class="control-panel__options__container--title fs-lg-18px ALL_BOOKS_PAGE_BTN">همه
-                                کتاب‌ها</h5>
-                        </a>
+                        <h5 class="control-panel__options__container--title fs-lg-18px ALL_BOOKS_PAGE_BTN">همه
+                            کتاب‌ها</h5>
+
                     </div>
+                </a>
 
 
 
-                    <div class="accordion control-panel__options__container categories padding-0"
-                        id="accordionPanelsStayOpenExample">
-                        <div class="accordion-item no-border">
+                <div class="accordion control-panel__options__container categories padding-0"
+                    id="accordionPanelsStayOpenExample">
+                    <div class="accordion-item no-border">
 
-                            <div class="d-flex align-items-center">
-                                <i
-                                    class="control-panel__options__container--icon fa fa-bars d-flex align-items-center justify-content-center"></i>
-                                <h5 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button
-                                        class="accordion-button control-panel__options__container--title padding-0 box-shadow-none background-color-none color-black fs-lg-18px fw-medium"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                        aria-controls="panelsStayOpen-collapseOne">
-                                        دسته‌بندی‌‌ها
-                                    </button>
-                                </h5>
-                            </div>
-
-
-                            <div id="panelsStayOpen-collapseOne"
-                                class="control-panel__options__container--body accordion-collapse collapse show"
-                                aria-labelledby="panelsStayOpen-headingOne">
-                                <div class="accordion-body">
-                                    <!-- body of categories -->
+                        <div class="d-flex align-items-center">
+                            <i
+                                class="control-panel__options__container--icon fa fa-bars d-flex align-items-center justify-content-center"></i>
+                            <h5 class="accordion-header" id="panelsStayOpen-headingOne">
+                                <button
+                                    class="accordion-button control-panel__options__container--title padding-0 box-shadow-none background-color-none color-black fs-lg-18px fw-medium"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne"
+                                    aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                    دسته‌بندی‌‌ها
+                                </button>
+                            </h5>
+                        </div>
 
 
-                                    <div class="accordion accordion-flush control-panel__options__container--body--options"
-                                        id="accordionFlushExample">
-                                        <div class="accordion-item no-border">
-                                            <h5 class="accordion-header accordion accordion-flush control-panel__options__container--body--options--genre"
-                                                id="flush-headingOne">
-                                                <button
-                                                    class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                                    aria-controls="flush-collapseOne">
-                                                    ژانر
-                                                </button>
-                                            </h5>
-                                            <div id="flush-collapseOne"
-                                                class="accordion-collapse collapse control-panel__options__container--body--options--genre--options"
-                                                aria-labelledby="flush-headingOne"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body GENRE_OPTIONS_CONTAINER">
-                                                    <!-- body of genre category -->
-
-                                                </div>
-                                            </div>
-                                        </div>
+                        <div id="panelsStayOpen-collapseOne"
+                            class="control-panel__options__container--body accordion-collapse collapse show"
+                            aria-labelledby="panelsStayOpen-headingOne">
+                            <div class="accordion-body">
+                                <!-- body of categories -->
 
 
+                                <div class="accordion accordion-flush control-panel__options__container--body--options"
+                                    id="accordionFlushExample">
+                                    <div class="accordion-item no-border">
+                                        <h5 class="accordion-header accordion accordion-flush control-panel__options__container--body--options--genre"
+                                            id="flush-headingOne">
+                                            <button
+                                                class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
+                                                type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                                aria-controls="flush-collapseOne">
+                                                ژانر
+                                            </button>
+                                        </h5>
+                                        <div id="flush-collapseOne"
+                                            class="accordion-collapse collapse control-panel__options__container--body--options--genre--options"
+                                            aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body GENRE_OPTIONS_CONTAINER">
+                                                <!-- body of genre category -->
 
-
-                                        <div class="accordion-item no-border">
-                                            <h5 class="accordion-header control-panel__options__container--body--options--language"
-                                                id="flush-headingTwo">
-                                                <button
-                                                    class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                                    aria-controls="flush-collapseTwo">
-                                                    زبان
-                                                </button>
-                                            </h5>
-                                            <div id="flush-collapseTwo"
-                                                class="accordion-collapse collapse control-panel__options__container--body--options--language--options"
-                                                aria-labelledby="flush-headingTwo"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body LANGUAGE_OPTIONS_CONTAINER">
-                                                    <!-- body of language category -->
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <div class="accordion-item no-border">
-                                            <h5 class="accordion-header control-panel__options__container--body--options--year"
-                                                id="flush-headingThree">
-                                                <button
-                                                    class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                                    aria-controls="flush-collapseThree">
-                                                    سال
-                                                </button>
-                                            </h5>
-                                            <div id="flush-collapseThree"
-                                                class="accordion-collapse collapse control-panel__options__container--body--options--year--options"
-                                                aria-labelledby="flush-headingThree"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body">
-                                                    <!-- body of year category -->
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
 
 
+
+
+                                    <div class="accordion-item no-border">
+                                        <h5 class="accordion-header control-panel__options__container--body--options--language"
+                                            id="flush-headingTwo">
+                                            <button
+                                                class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
+                                                type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                                aria-controls="flush-collapseTwo">
+                                                زبان
+                                            </button>
+                                        </h5>
+                                        <div id="flush-collapseTwo"
+                                            class="accordion-collapse collapse control-panel__options__container--body--options--language--options"
+                                            aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body LANGUAGE_OPTIONS_CONTAINER">
+                                                <!-- body of language category -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                    <div class="accordion-item no-border">
+                                        <h5 class="accordion-header control-panel__options__container--body--options--year"
+                                            id="flush-headingThree">
+                                            <button
+                                                class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
+                                                type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                                aria-controls="flush-collapseThree">
+                                                سال
+                                            </button>
+                                        </h5>
+                                        <div id="flush-collapseThree"
+                                            class="accordion-collapse collapse control-panel__options__container--body--options--year--options"
+                                            aria-labelledby="flush-headingThree"
+                                            data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <!-- body of year category -->
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
+
+
                             </div>
                         </div>
                     </div>
+                </div>
 
 
 
-
+                <a href="/myLibrary" class="TO_MY_LIBRARY_PAGE_BTN">
                     <div class="control-panel__options__container">
                         <div class="control-panel__options__container--icon">
                             <i class="fa-solid fa-bookmark"></i>
                         </div>
 
-                        <h5><a href="/myLibrary"
-                                class="control-panel__options__container--title fs-18px fw-medium bg-transparent MY_LIBRARY_BTN">کتابخانه‌ی
-                                من</a></h5>
+                        <h5
+                            class="control-panel__options__container--title fs-18px fw-medium bg-transparent MY_LIBRARY_BTN">
+                            کتابخانه من</h5>
                     </div>
+                </a>
 
                 </section>
 
@@ -449,153 +447,48 @@
 
                 <section class="control-panel__options">
 
-                    <div
-                        class="control-panel__options__container home-page d-flex justify-content-start align-items-center">
 
-                        <i
-                            class="control-panel__options__container--icon fa-solid fa-home d-flex justify-content-center align-items-center"></i>
+                    <a href="/" class="TO_HOME_PAGE_BTN">
+                        <div
+                            class="control-panel__options__container home-page d-flex justify-content-start align-items-center">
+
+                            <i
+                                class="control-panel__options__container--icon fa-solid fa-home d-flex justify-content-center align-items-center"></i>
 
 
-                        <a href="#">
+
                             <h5 class="control-panel__options__container--title fs-lg-18px ">صفحه اصلی</h5>
-                        </a>
-                    </div>
+
+                        </div>
+                    </a>
+
+
+                    <a href="/allBooks" class="TO_ALL_BOOKS_PAGE_BTN">
+                        <div
+                            class="control-panel__options__container all-books d-flex justify-content-start align-items-center">
+
+                            <i
+                                class="control-panel__options__container--icon fa-solid fa-book d-flex justify-content-center align-items-center"></i>
 
 
 
-                    <div
-                        class="control-panel__options__container all-books d-flex justify-content-start align-items-center">
-
-                        <i
-                            class="control-panel__options__container--icon fa-solid fa-book d-flex justify-content-center align-items-center"></i>
-
-
-                        <a href="#">
                             <h5 class="control-panel__options__container--title fs-lg-18px ">همه کتاب‌ها</h5>
-                        </a>
-                    </div>
+
+                        </div>
+                    </a>
 
 
-
-                    <div class="accordion control-panel__options__container categories padding-0"
-                        id="accordionPanelsStayOpenExample">
-                        <div class="accordion-item no-border">
-
-                            <div class="d-flex align-items-center">
-                                <i
-                                    class="control-panel__options__container--icon fa fa-bars d-flex align-items-center justify-content-center"></i>
-                                <h5 class="accordion-header" id="panelsStayOpen-headingOne">
-                                    <button
-                                        class="accordion-button control-panel__options__container--title padding-0 box-shadow-none background-color-none color-black fs-lg-18px fw-medium"
-                                        type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                        aria-controls="panelsStayOpen-collapseOne">
-                                        قفسه‌های من
-                                    </button>
-                                </h5>
+                    <a href="/myLibrary" class="TO_MY_LIBRARY_PAGE_BTN">
+                        <div class="control-panel__options__container">
+                            <div class="control-panel__options__container--icon">
+                                <i class="fa-solid fa-bookmark"></i>
                             </div>
 
-
-                            <div id="panelsStayOpen-collapseOne"
-                                class="control-panel__options__container--body accordion-collapse collapse show"
-                                aria-labelledby="panelsStayOpen-headingOne">
-                                <div class="accordion-body">
-                                    <!-- body of categories -->
-
-
-
-
-                                    <div class="accordion accordion-flush control-panel__options__container--body--options"
-                                        id="accordionFlushExample">
-                                        <div class="accordion-item no-border">
-                                            <h5 class="accordion-header accordion accordion-flush control-panel__options__container--body--options--genre"
-                                                id="flush-headingOne">
-                                                <button
-                                                    class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                                    aria-controls="flush-collapseOne">
-                                                    ژانر
-                                                </button>
-                                            </h5>
-                                            <div id="flush-collapseOne"
-                                                class="accordion-collapse collapse control-panel__options__container--body--options--genre--options"
-                                                aria-labelledby="flush-headingOne"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body GENRE_OPTIONS_CONTAINER">
-                                                    <!-- body of genre category -->
-
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <div class="accordion-item no-border">
-                                            <h5 class="accordion-header control-panel__options__container--body--options--language"
-                                                id="flush-headingTwo">
-                                                <button
-                                                    class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                                    aria-controls="flush-collapseTwo">
-                                                    زبان
-                                                </button>
-                                            </h5>
-                                            <div id="flush-collapseTwo"
-                                                class="accordion-collapse collapse control-panel__options__container--body--options--language--options"
-                                                aria-labelledby="flush-headingTwo"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body LANGUAGE_OPTIONS_CONTAINER">
-                                                    <!-- body of language category -->
-                                                </div>
-                                            </div>
-                                        </div>
-
-
-
-
-                                        <div class="accordion-item no-border">
-                                            <h5 class="accordion-header control-panel__options__container--body--options--year"
-                                                id="flush-headingThree">
-                                                <button
-                                                    class="accordion-button box-shadow-none background-color-none color-black collapsed fs-lg-16px fw-medium"
-                                                    type="button" data-bs-toggle="collapse"
-                                                    data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                                    aria-controls="flush-collapseThree">
-                                                    سال
-                                                </button>
-                                            </h5>
-                                            <div id="flush-collapseThree"
-                                                class="accordion-collapse collapse control-panel__options__container--body--options--year--options"
-                                                aria-labelledby="flush-headingThree"
-                                                data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body">
-                                                    <!-- body of year category -->
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-
-                                </div>
-                            </div>
+                            <h5 class="control-panel__options__container--title fs-18px fw-medium bg-transparent">
+                                کتابخانه‌ی
+                                من</h5>
                         </div>
-                    </div>
-
-
-
-
-                    <div class="control-panel__options__container">
-                        <div class="control-panel__options__container--icon">
-                            <i class="fa-solid fa-bookmark"></i>
-                        </div>
-
-                        <h5><a href="#"
-                                class="control-panel__options__container--title fs-18px fw-medium bg-transparent MY_LIBRARY_BTN">کتابخانه‌ی
-                                من</a></h5>
-                    </div>
+                    </a>
 
                 </section>
 
