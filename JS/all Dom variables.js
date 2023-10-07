@@ -4,9 +4,11 @@ const ALL_BOOKS_PAGE_BTN            = document.querySelector('.ALL_BOOKS_PAGE_BT
 
 
 // control panel section
-const GENRE_OPTIONS_CONTAINER       = document.querySelector('.GENRE_OPTIONS_CONTAINER')
-const LANGUAGE_OPTIONS_CONTAINER    = document.querySelector('.LANGUAGE_OPTIONS_CONTAINER')
-
+const GENRE_OPTIONS_CONTAINER       = document.querySelector('.GENRE_OPTIONS_CONTAINER');
+const LANGUAGE_OPTIONS_CONTAINER    = document.querySelector('.LANGUAGE_OPTIONS_CONTAINER');
+const TO_HOME_PAGE_BTN              = document.querySelector('.TO_HOME_PAGE_BTN');
+const TO_MY_LIBRARY_PAGE_BTN        = document.querySelector('.TO_MY_LIBRARY_PAGE_BTN');
+const TO_ALL_BOOKS_PAGE_BTN         = document.querySelector('.TO_ALL_BOOKS_PAGE_BTN');
 
 
 // library sectoin
@@ -24,6 +26,7 @@ const FAV_SAVED_BOOKS               = document.querySelector('.FAV_SAVED_BOOKS')
 
 
 // Home page
+const HOME_PAGE                     = document.querySelector('.HOME_PAGE');
 const HOME_CARD_SWIPER              = document.querySelector('.HOME_CARD_SWIPER');
 const HOME_CARD_SWIPER__INFO        = document.querySelector(' HOME_CARD_SWIPER__INFO');
 const SLIDER_CONTAINER              = document.querySelector('.SLIDER_CONTAINER');

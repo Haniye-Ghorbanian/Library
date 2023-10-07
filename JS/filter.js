@@ -1,22 +1,19 @@
 // Models
-let genres;
-let languages;
+let genres                         = [...new Set(BOOKS.map(book => book.genre))];
+let languages                      = [...new Set(BOOKS.map(book => book.language))];
+let filteredBooksOnLanguage;
+let generalFilteredBooks           = [];
+let filterOnGenre                  = [];
+let filterOnLanguage               = [];
+let filterOnYear                   = [];
 let GENRE_CHECKBOXES;
 let languageOptions;
 let genreOptions;
-let filteredBooksOnLanguage;
-let generalFilteredBooks = [];
-let filterOnGenre = [];
-let filterOnLanguage = [];
-let filterOnYear = [];
 
 
 
 
 function allCategoriesRender() {
-    genres      = [...new Set(BOOKS.map(book => book.genre))];
-    languages   = [...new Set(BOOKS.map(book => book.language))];
-
     const genrePromise    = genreCategoryMaker(genres);
     const languagePromise = languageCategoryMaker(languages);
 
