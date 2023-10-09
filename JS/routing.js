@@ -1,11 +1,10 @@
 const LINKS = document.querySelectorAll('.LINK');
-LINKS.forEach(link => link.addEventListener('click', (event) => {
-    event.preventDefault();
-    const href = event.target.closest('.LINK').href;
-    const currentHref = href.split('/')
-    const currentPath = currentHref[currentHref.length - 1];
-    history.pushState(null, null, href);
-    switch (currentPath) {
+
+
+
+
+function renderPage(path) {
+    switch (path) {
         case '':
             HOME_PAGE.classList.remove('d-none');
             MY_LIBRARY_PAGE.classList.add('d-none');
@@ -25,7 +24,40 @@ LINKS.forEach(link => link.addEventListener('click', (event) => {
             break;
 
     }
-})) 
+}
+
+
+
+function handleRouting() {
+    const path = window.location.pathname.split('/');
+    const prePath = (path[path.length - 1]);
+    renderPage(prePath)
+}
+
+
+
+function updateRouting(event) {
+    event.preventDefault();
+    const href = event.target.closest('.LINK').href;
+    const currentHref = href.split('/')
+    const currentPath = currentHref[currentHref.length - 1];
+    history.pushState(null, null, href);
+    renderPage(currentPath);
+}
+
+
+
+
+
+
+LINKS.forEach(link => link.addEventListener('click', updateRouting));
+    
+
+
+
+
+
+window.addEventListener('popstate', handleRouting);
 
 // routing to home page page (handle back and forward)
 
