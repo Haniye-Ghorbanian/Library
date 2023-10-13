@@ -7,7 +7,7 @@ function renderCards() {
     const bookCard = BOOKS.map(book => {
 
         return  `  
-            <a href="./book${book.id}" class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center SINGLE_BOOK" data-book-id="${book.id}">
+            <a href="./book" class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center SINGLE_BOOK LINK" data-book-id="${book.id}">
                 <div>
         
                     <div class="cards--bookmoc">

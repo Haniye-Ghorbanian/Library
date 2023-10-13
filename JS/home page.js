@@ -3,7 +3,9 @@
 
 function sliderMaker() {
     const topSwiperSlide = genres.map(genre => {
-        return `<swiper-slide class="d-flex justify-content-center align-items-center h-90 " data-genre="${genre}">
+        return `
+        
+    <swiper-slide class="d-flex justify-content-center align-items-center h-90 " data-genre="${genre}">
         <div class="cards p-0 box-shadow-none m-3 d-flex align-items-center justify-content-center h-85 w-50 w-max-none HOME_CARD_SWIPER">
 
             

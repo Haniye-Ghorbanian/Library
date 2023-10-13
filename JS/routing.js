@@ -1,4 +1,6 @@
 const LINKS = document.querySelectorAll('.LINK');
+renderCards()
+console.log(SINGLE_BOOK)
 
 
 
@@ -9,21 +11,41 @@ function renderPage(path) {
             HOME_PAGE.classList.remove('d-none');
             MY_LIBRARY_PAGE.classList.add('d-none');
             ALL_BOOKS_PAGE.classList.add('d-none');
+            SINGLE_BOOK.classList.add('d-none');
             break;
 
         case 'myLibrary':
             HOME_PAGE.classList.add('d-none');
             ALL_BOOKS_PAGE.classList.add('d-none');
             MY_LIBRARY_PAGE.classList.remove('d-none');
+            SINGLE_BOOK.classList.add('d-none');
             break;
 
         case 'allBooks':
             HOME_PAGE.classList.add('d-none');
             MY_LIBRARY_PAGE.classList.add('d-none');
             ALL_BOOKS_PAGE.classList.remove('d-none');
+            SINGLE_BOOK.classList.add('d-none');
             break;
 
+        case 'book': 
+            HOME_PAGE.classList.add('d-none');
+            MY_LIBRARY_PAGE.classList.add('d-none');
+            ALL_BOOKS_PAGE.classList.add('d-none');
+            SINGLE_BOOK.classList.remove('d-none');
+            const bookId = +event.target.closest('.SINGLE_BOOK').getAttribute('data-book-id');
+            showSingleBook()
+
+        
+       
+
     }
+}
+
+
+
+function showSingleBook() {
+
 }
 
 
@@ -37,8 +59,10 @@ function handleRouting() {
 
 
 function updateRouting(event) {
+    debugger
     event.preventDefault();
     const href = event.target.closest('.LINK').href;
+    console.log(href)
     const currentHref = href.split('/')
     const currentPath = currentHref[currentHref.length - 1];
     history.pushState(null, null, href);
@@ -53,11 +77,11 @@ function updateRouting(event) {
 LINKS.forEach(link => link.addEventListener('click', updateRouting));
     
 
-
-
-
-
 window.addEventListener('popstate', handleRouting);
+
+
+
+
 
 // routing to home page page (handle back and forward)
 
