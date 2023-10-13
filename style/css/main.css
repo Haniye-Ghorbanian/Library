@@ -126,6 +126,10 @@ svg {
   color: #cccaca !important;
 }
 
+.w-1000 {
+  width: 1000px !important;
+}
+
 .mgc {
   position: relative;
   width: 16px;
@@ -569,4 +573,9 @@ svg {
 
 .swiper-height {
   height: 100%;
+}
+
+.mySwiper {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }/*# sourceMappingURL=main.css.map */

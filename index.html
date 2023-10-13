@@ -8,7 +8,7 @@
     <!-- <meta http-equiv="Content-Security-Policy" content="font-src https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/ data:"> -->
     <!-- <base href="/"> -->
 
-
+    
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
@@ -17,6 +17,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./style/css/main.css">
     <link rel="stylesheet" href="./style/css/font-size.min.css">
+
 
 
     <!-- JS scripts -->
@@ -37,6 +38,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js" defer></script>
+   
 
 </head>
 
@@ -125,7 +127,7 @@
             <!-- Home page => saved book cards::start -->
             <section class="saved-books position-absolute w-75 top-0 right-20">
 
-                <div class="saved-books__container  w-100 d-flex flex-column mb-5 mt-5 bg-none">
+                <div class="saved-books__container w-100 d-flex flex-column mb-5 mt-5 bg-none">
 
 
                     <div
@@ -151,59 +153,6 @@
                             slides-per-view="2" loop="true" navigation="true" keyboard="true">
 
                             <!-- slider book cards go here -->
-
-
-                            <swiper-slide class="d-flex justify-content-center align-items-center">
-                                <div
-                                    class="cards p-0 box-shadow-none m-3 d-flex align-items-center justify-content-between h-85 w-50 w-max-none">
-
-                                    <div class="cards__layout h-100 w-100 HOME_CARD_SWIPER">
-
-                                        <div class="cards--bookmoc--image cards__layout--image">
-                                            <img class="cards--bookmoc--image--frame" src="./assets/images/1.jpg"
-                                                alt="">
-                                        </div>
-
-                                    </div>
-
-
-
-                                    <div class="cards__info HOME_CARD_SWIPER_INFO d-none">
-
-                                        <div
-                                            class="cards__info--tw d-flex flex-column align-items-center justify-content-between">
-                                            <span class="cards__info--tw--title fs-lg-20px fw-bold">ویس و رامین</span>
-                                            <span class="cards__info--tw--writer fs-lg-18px fw-semibold">هرچی</span>
-                                        </div>
-
-
-                                        <div class="cards__info--lgd d-flex align-items-center justify-content-between">
-
-                                            <span class="cards__info--lgd--language fs-lg-16px fw-normal">فارسی</span>
-                                            <span class="cards__info--lgd--genre fs-lg-16px fw-normal">ادبیات</span>
-                                            <span class="cards__info--lgd--date fs-lg-16px fw-normal">۶۷۰</span>
-                                        </div>
-
-
-                                        <div class="cards__content__buttons CARD_BUTTONS_CONTAINER">
-
-                                            <button class="cards__content__buttons--add Mybtn ADD_TO_LIBRARY_BTN"
-                                                data-book-id="${book.id}">افزودن به کتابخانه</button>
-
-                                            <i class="fa-regular fa-heart cards__content__buttons--fav MyIcon ADD_TO_FAV_BTN"
-                                                data-fav-book="${book.id}"></i>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-                            </swiper-slide>
-
-
-
-
-
 
                         </swiper-container>
                     </div>
