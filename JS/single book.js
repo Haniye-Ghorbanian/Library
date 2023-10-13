@@ -1,6 +1,6 @@
 let similarBooks = [];
 let lastSeen = [];
-
+console.log(lastSeen);
 
 function handleRoutToSingleBook(event) {
     
@@ -36,9 +36,10 @@ function showSingleBookPage() {
 
 function findRelatedBookCard(id) {
    const relatedBook = BOOKS.find(book => book.id === id);
+   lastSeen.push(relatedBook);
   
    renderBookCard(relatedBook);
-   if(similarBooks.length===0){
+   if(similarBooks.length === 0){
        findSimilarBooks(relatedBook, id);
    }
 }
@@ -83,7 +84,7 @@ function renderBookCard(book) {
 
     `
     SINGLE_BOOK_PAGE_BOOK.innerHTML = bookCard;
-    console.log(lastSeen);
+  
 }
 
 
@@ -95,7 +96,7 @@ function findSimilarBooks(relatedBook, currentId) {
         similarBooks.splice(currentBookIndex, 1); 
     }
 
-   console.log(similarBooks);
+ 
    renderSimilarBooks(similarBooks);
 }
 

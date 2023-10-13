@@ -30,6 +30,7 @@ const HOME_PAGE                     = document.querySelector('.HOME_PAGE');
 const HOME_CARD_SWIPER              = document.querySelector('.HOME_CARD_SWIPER');
 const HOME_CARD_SWIPER__INFO        = document.querySelector(' HOME_CARD_SWIPER__INFO');
 const SLIDER_CONTAINER              = document.querySelector('.SLIDER_CONTAINER');
+const LAST_SEEN_BOOKS               = document.querySelector('.LAST_SEEN_BOOKS');
 
 
 // Single book page
