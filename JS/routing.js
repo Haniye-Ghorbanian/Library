@@ -58,7 +58,7 @@ function handleRouting() {
 
 
 function updateRouting(event) {
-    debugger
+    
     event.preventDefault();
     const href = event.target.closest('.LINK').href;
     // console.log(href)
@@ -85,7 +85,7 @@ window.addEventListener('popstate', handleRouting);
 // routing to home page page (handle back and forward)
 
 // function handleRoutingToHomePage(event) {
-//     debugger
+//     
 //     event.preventDefault();
 //     const homePageHref = event.target.closest('a').href;
 //     console.log(homePageHref)
@@ -112,7 +112,7 @@ window.addEventListener('popstate', handleRouting);
 // routing to all books page (handle back and forward)
 
 // function handleRoutingToAllBooks(event) {
-//     debugger
+//     
 //     event.preventDefault();
 //     const allBooksPageHref = event.target.closest('a').href;
 //     console.log(allBooksPageHref)
@@ -135,7 +135,7 @@ window.addEventListener('popstate', handleRouting);
 // routing to my library page (handle back and forward)
 
 // function handleRoutingToMyLibrary(event) {
-//     debugger
+//     
 //     event.preventDefault();
 //     const myLibraryPageHref = event.target.closest('a').href;
 //     const pathParts = myLibraryPageHref.split('/'); // Split the URL by '/'

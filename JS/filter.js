@@ -123,7 +123,7 @@ function identifyLanguageCheckbox() {
 
 // For genre filter::start
 function findBooksOnGenre(event) {
-    // debugger
+    // 
     switch (event.target.checked) {
         case true:
             
@@ -155,7 +155,7 @@ function findBooksOnGenre(event) {
 // For language filter::start
 function findBooksOnLanguage(event) {
     let filteredBooksOnLanguageWithGenre;
-    debugger
+    
     switch (event.target.checked) {
         case true:
 

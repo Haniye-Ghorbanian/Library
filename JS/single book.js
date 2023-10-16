@@ -7,7 +7,7 @@ let lastSeenBook;
 
 
 function handleRoutToSingleBook(event) {
-    debugger
+    
     event.preventDefault();
     if(event.target.closest('.SINGLE_BOOK')){
         const singleBookHref = event.target.closest('.SINGLE_BOOK').href;
@@ -178,7 +178,7 @@ function renderSimilarBooks() {
 
 
 function handleBackward() {
-    debugger
+    
     const path = window.location.pathname.split('/');
     const prePath = (path[path.length - 1]);
     let id; 

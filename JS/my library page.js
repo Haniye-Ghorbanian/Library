@@ -1,6 +1,6 @@
 let containerIsOpened = false;
 function showMoreSavedBooks() {
-    debugger
+    
     if(!containerIsOpened) {
         ALL_SAVED_BOOKS.classList.remove('max-h-350');
         ALL_SAVED_BOOKS.classList.add('fit-content-h');

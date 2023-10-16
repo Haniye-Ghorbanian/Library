@@ -15,7 +15,7 @@ function getFavButtonState(buttonId) {
 
 
 function addToFav(event) {
-    debugger
+    
     event.stopPropagation();
     bookId = event.target.getAttribute('data-fav-book');
     const exisetdInFavBook = BOOKS.find(book => book.id === +bookId);
@@ -163,7 +163,7 @@ function handleAddtoFavFromSingleBookPage(button) {
 
 let favContainerIsOpened = false;
 function showMoreFavBooks() {
-    debugger
+    
     if(!favContainerIsOpened) {
         ALL_FAV_BOOKS.classList.remove('max-h-350');
         ALL_FAV_BOOKS.classList.add('fit-content-h');
