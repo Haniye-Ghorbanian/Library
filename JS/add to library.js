@@ -137,9 +137,9 @@ function handleAddToMyLibrary(buttonsContainers) {
 }
 
 
-// function handleAddtoLibFromSingleBookPage(button) {
-//     button.addEventListener('click', addToLibrary);
-// }
+function handleAddtoLibFromSingleBookPage(button) {
+    button.addEventListener('click', addToLibrary);
+}
 
 
 
