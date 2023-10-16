@@ -12,6 +12,7 @@ let childrenOuterHtml = ''
 
 function addToLibrary(event) {
     // debugger
+    event.preventDefault();
     event.stopPropagation();
     buttonId = event.target.getAttribute('data-book-id');
     localStorage.setItem('buttonId', buttonId)
@@ -88,7 +89,7 @@ function renderAllSavedBooks() {
     const storedBooksString = localStorage.getItem('savedBooks');
     const storedBooks = JSON.parse(storedBooksString) || [];
     const savedBooksCardTemplate = [...new Set (storedBooks)].map(book => {
-        return `<div class="cards col-lg-4 m-3 d-flex flex-column align-items-center justify-content-center">
+        return `<div class="cards col-lg-4 mt-3 ms-3 me-3 mb-5 d-flex flex-column align-items-center justify-content-center">
             
         <div class="cards--bookmoc">
 
@@ -134,6 +135,12 @@ function handleAddToMyLibrary(buttonsContainers) {
         btn.addEventListener('click', addToLibrary);
     });
 }
+
+
+// function handleAddtoLibFromSingleBookPage(button) {
+//     button.addEventListener('click', addToLibrary);
+// }
+
 
 
 function x(buttonId) {

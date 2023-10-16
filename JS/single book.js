@@ -1,55 +1,62 @@
 let similarBooks = [];
 let lastSeen = [];
-console.log(lastSeen);
+let clickedBookId;
+let currentPage;
+let lastSeenBook;
+
+
 
 function handleRoutToSingleBook(event) {
-    
+    debugger
     event.preventDefault();
     if(event.target.closest('.SINGLE_BOOK')){
         const singleBookHref = event.target.closest('.SINGLE_BOOK').href;
-        lastSeen.push(event.target.closest('.SIMILAR_BOOK'));
-        const bookId = +event.target.closest('.SINGLE_BOOK').getAttribute('data-book-id');
+        clickedBookId = +event.target.closest('.SINGLE_BOOK').getAttribute('data-book-id');
+        lastSeen.push(lastSeenBook);
+        lastSeenBook = BOOKS.find(book => book.id === clickedBookId);
+        renderLastSeenCards(lastSeenBook);
         history.pushState(null, null, singleBookHref);
-        findRelatedBookCard(bookId);
+        findRelatedBookCard(clickedBookId);
         showSingleBookPage();
     } 
 
     else {
         const singleBookHref = event.target.closest('.SIMILAR_BOOK').href;
-        lastSeen.push(event.target.closest('.SIMILAR_BOOK'));
-        const bookId = +event.target.closest('.SIMILAR_BOOK').getAttribute('data-book-id');
+        // lastSeen.push(event.target.closest('.SIMILAR_BOOK'));
+        clickedBookId = +event.target.closest('.SIMILAR_BOOK').getAttribute('data-book-id');
+        lastSeenBook = BOOKS.find(book => book.id === clickedBookId);
+        lastSeen.push(lastSeenBook);
+        renderLastSeenCards(lastSeenBook);
         history.pushState(null, null, singleBookHref);
-        findRelatedBookCard(bookId);
+        findRelatedBookCard(clickedBookId);
     }
      
 }
 
 
-
-
 function showSingleBookPage() {
     ALL_BOOKS_PAGE.classList.add('d-none');
     SINGLE_BOOK_PAGE.classList.remove('d-none');
-    
 }
+
 
 
 function findRelatedBookCard(id) {
    const relatedBook = BOOKS.find(book => book.id === id);
-   lastSeen.push(relatedBook);
-  
    renderBookCard(relatedBook);
-   if(similarBooks.length === 0){
+
+//    if(similarBooks.length === 0 || +relatedBook.id !== id){
        findSimilarBooks(relatedBook, id);
-   }
+//    }
 }
+
 
 
 function renderBookCard(book) {
     SINGLE_BOOK_PAGE_BOOK.innerHTML = '';
     const bookCard = `
     
-        <div class="single-book-page__book--info w-50 h-100 d-flex justify-content-center align-items-center flex-column">
+        <div class="single-book-page__book--info w-50 h-100 d-flex justify-content-center align-items-center flex-column BOOK_${book.id}">
             <div class="single-book-page__book--info--tw text-center">
                 <h1 class="single-book-page__book--info--tw--title fs-lg-55px fw-bold mb-4">${book.title}</h1>
         
@@ -68,10 +75,10 @@ function renderBookCard(book) {
         
         
             <div class="single-book-page__book--info--btns d-flex flex-row w-80 justify-content-evenly">
-                <button class="cards__content__buttons--add fs-lg-18px Mybtn ADD_TO_LIBRARY_BTN"
+                <button class="cards__content__buttons--add fs-lg-18px Mybtn ADD_TO_LIBRARY_BTN_${book.id}"
                     data-book-id="${book.id}">افزودن به کتابخانه</button>
         
-                <i class="fa-regular fa-heart cards__content__buttons--fav text-white fs-lg-18px MyIcon ADD_TO_FAV_BTN"
+                <i class="fa-regular fa-heart cards__content__buttons--fav text-white fs-lg-18px MyIcon ADD_TO_FAV_BTN_${book.id}"
                     data-fav-book="${book.id}"></i>
             </div>
         
@@ -84,24 +91,31 @@ function renderBookCard(book) {
 
     `
     SINGLE_BOOK_PAGE_BOOK.innerHTML = bookCard;
-  
+    currentPage = document.querySelector(`.BOOK_${book.id}`).parentElement.parentElement.parentElement;
+
+    const ADD_TO_FAV_SNIGLE_BOOK = document.querySelector(`.ADD_TO_FAV_BTN_${book.id}`);
+    const ADD_TO_LIBRARY_SNIGLE_BOOK = document.querySelector(`.ADD_TO_LIBRARY_BTN_${book.id}`);
+
+   
+
+    handleAddtoFavFromSingleBookPage(ADD_TO_FAV_SNIGLE_BOOK);
+    handleAddtoLibFromSingleBookPage(ADD_TO_LIBRARY_SNIGLE_BOOK);
 }
+
 
 
 
 function findSimilarBooks(relatedBook, currentId) {
-    if(similarBooks.length === 0){
-        BOOKS.filter(book =>  {if(book.genre === relatedBook.genre) {similarBooks.push(book);}});
-        const currentBookIndex = similarBooks.findIndex(book => book.id === currentId);
-        similarBooks.splice(currentBookIndex, 1); 
-    }
-
+    
+    similarBooks = [];
+    BOOKS.filter(book =>  {if(book.genre === relatedBook.genre)
+                                   {similarBooks.push(book);}});
+    const currentBookIndex = similarBooks.findIndex(book => book.id === currentId);
+    similarBooks.splice(currentBookIndex, 1); 
+   
  
-   renderSimilarBooks(similarBooks);
+     renderSimilarBooks(similarBooks);
 }
-
-
-
 
 
 
@@ -109,10 +123,10 @@ function renderSimilarBooks() {
     
     const renderedBooks = similarBooks.map(book => {
         return `
-            <swiper-slide class="">
-            <a href="./book${book.id}" class="cards box-shadow-none m-3 d-flex flex-column align-items-center justify-content-center SIMILAR_BOOK" data-book-id="${book.id}">
+        <a href="./book${book.id}" class="SIMILAR_BOOK" data-book-id="${book.id}">
+            <swiper-slide class="cards box-shadow-none m-3 d-flex flex-column align-items-center justify-content-center" style="width: 335.75px; margin-left: 30px;>
                 <div
-                    class="cards box-shadow-none m-3 d-flex flex-column align-items-center justify-content-center">
+                    class="">
         
                     <div class="cards--bookmoc">
         
@@ -149,8 +163,8 @@ function renderSimilarBooks() {
         
                     </div>
                 </div>
-                </a>
-            </swiper-slide>`
+            </swiper-slide>
+        </a>`
         })
 
 
@@ -163,8 +177,30 @@ function renderSimilarBooks() {
 }
 
 
+function handleBackward() {
+    debugger
+    const path = window.location.pathname.split('/');
+    const prePath = (path[path.length - 1]);
+    let id; 
+    console.log(id);
+    console.log(currentPage);
+    console.log(prePath);
+    if(prePath.match(/book\d+/)) {
+        HOME_PAGE.classList.add('d-none');
+        MY_LIBRARY_PAGE.classList.add('d-none');
+        ALL_BOOKS_PAGE.classList.add('d-none');
+        id = +prePath.match(/\d+/)[0];
+        SINGLE_BOOK_PAGE.classList.remove('d-none');
+        findRelatedBookCard(id);
+    } else {
+        currentPage.classList.add('d-none');
+    }
+}
+
+
 
 document.addEventListener("DOMContentLoaded", startSingleBook);
+window.addEventListener("popstate", handleBackward)
 function startSingleBook(singleBook) {
     singleBook.map(book => book.addEventListener('click', handleRoutToSingleBook))
 }

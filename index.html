@@ -26,13 +26,13 @@
     <script src="./JS/utilities.js"></script>
     <script src="./JS/main.js" defer></script>
     <script src="./JS/filter.js" defer></script>
-    <script src="./JS/add to library.js" defer></script>
-    <script src="./JS/add to favourite.js" defer></script>
     <script src="./JS/my library page.js" defer></script>
     <script src="./JS/home page.js" defer></script>
     <script src="./JS/home page-last seen.js" defer></script>
     <script src="./JS/routing.js" defer></script>
     <script src="./JS/single book.js"></script>
+    <script src="./JS/add to library.js" defer></script>
+    <script src="./JS/add to favourite.js" defer></script>
     <script src="./JS/last seen.js" defer></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
@@ -104,10 +104,10 @@
                                 <i class="fa-solid fa-bookmark"></i>
                             </div>
 
-                            <h5
-                                class="control-panel__options__container--title fs-18px fw-medium bg-transparent MY_LIBRARY_BTN">
+                            <h5 class="control-panel__options__container--title fs-18px fw-medium bg-transparent MY_LIBRARY_BTN">
                                 کتابخانه‌ی
-                                من</h5>
+                                من
+                            </h5>
                         </div>
                     </a>
                 </section>
@@ -162,15 +162,14 @@
 
 
                 <div class="saved-books__container w-100 d-flex mb-5 mt-5 flex-column">
-                    <div
-                        class="saved-books__container--title d-flex justify-content-between align-items-center pt-4 pb-3 pe-3 ps-3">
+                    <div class="saved-books__container--title d-flex justify-content-between align-items-center pt-4 pb-3 pe-3 ps-3">
                         <span class="fs-lg-20px fw-semibold ms-3">آخرین مشاهده‌‌ها</span>
                     </div>
-                    <div
-                        class="saved-books__container--books h-85 saved-books-title d-flex align-items-center">
-                        <!-- favourite books go here -->
+
+                    <div class="saved-books__container--books h-85 saved-books-title d-flex align-items-center">
+                        <!-- last seen books go here -->
                         <swiper-container class="mySwiper swiper-height w-inherit LAST_SEEN_BOOKS" space-between="30"
-                            slides-per-view="2" loop="true" navigation="true" keyboard="true">
+                            slides-per-view="4" navigation="true" keyboard="true">
 
                             <!-- slider book cards go here -->
 
@@ -460,43 +459,7 @@
 
 
                 <!-- single book page => book and swiper => book::start -->
-                <section
-                    class="single-book-page__book mb-5 d-flex justify-content-between align-items-center w-100 SINGLE_BOOK_PAGE_BOOK">
-
-                    <div
-                        class="single-book-page__book--info w-50 h-100 d-flex justify-content-center align-items-center flex-column">
-                        <div class="single-book-page__book--info--tw text-center">
-                            <h1 class="single-book-page__book--info--tw--title fs-lg-55px fw-bold mb-4">ضیافت</h1>
-
-                            <h2 class="single-book-page__book--info--tw--author fs-lg-35px fw-semibold">افلاطون</h2>
-                        </div>
-
-
-
-                        <div class="single-book-page__book--info--gld d-flex flex-row w-80 justify-content-evenly mb-5">
-                            <h3 class="single-book-page__book--info--gld--genre fs-lg-22px fw-normal">فلسفه</h3>
-
-                            <h3 class="single-book-page__book--info--gld--language fs-lg-22px fw-normal">یونانی</h3>
-
-                            <h3 class="single-book-page__book--info--gld--date fs-lg-22px fw-normal">385</h3>
-                        </div>
-
-
-                        <div class="single-book-page__book--info--btns d-flex flex-row w-80 justify-content-evenly">
-                            <button class="cards__content__buttons--add fs-lg-18px Mybtn ADD_TO_LIBRARY_BTN"
-                                data-book-id="${book.id}">افزودن به کتابخانه</button>
-
-                            <i class="fa-regular fa-heart cards__content__buttons--fav text-white fs-lg-18px MyIcon ADD_TO_FAV_BTN"
-                                data-fav-book="${book.id}"></i>
-                        </div>
-
-                    </div>
-
-
-                    <div class="single-book-page__book--image w-50 h-100 text-center">
-                        <img class="" src="./assets/images/11.jpg" alt="">
-                    </div>
-                </section>
+                <section class="single-book-page__book mb-5 d-flex justify-content-between align-items-center w-100 SINGLE_BOOK_PAGE_BOOK"></section>
                 <!-- single book page => book and swiper => book::end -->
 
 
@@ -523,43 +486,7 @@
                                 <!-- slider book cards go here -->
 
 
-                                <swiper-slide>
-                                    <div
-                                        class="cards box-shadow-none m-3 d-flex flex-column align-items-center justify-content-center">
-
-                                        <div class="cards--bookmoc">
-
-                                            <div class="cards--bookmoc--image">
-                                                <img class="cards--bookmoc--image--frame" src="./assets/images/" alt="">
-                                            </div>
-
-
-                                        </div>
-                                        <div class="cards__content">
-                                            <h3
-                                                class="cards__content--title fs-lg-20px fs-md-18px fs-sm-16px mb-2 mt-3">
-                                            </h3>
-                                            <h4
-                                                class="cards__content--author mb-3 fw-normal fs-lg-16px fs-md-14px fs-sm-12px">
-                                            </h4>
-
-                                            <div class="cards__content__info mb-2 w-100">
-                                                <h5
-                                                    class="cards__content__info--published-date card-info fs-lg-14px fs-md-12px fs-sm-10px fw-light">
-                                                </h5>
-                                                <h5
-                                                    class="cards__content__info--genre card-info fs-lg-14px fs-md-12px fs-sm-10px fw-light">
-                                                </h5>
-                                                <h5
-                                                    class="cards__content__info--language card-info fs-lg-14px fs-md-12px fs-sm-10px fw-light">
-                                                </h5>
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                </swiper-slide>
-
-
+                                
                             </swiper-container>
                         </div>
                     </div>
@@ -658,21 +585,21 @@
 
 
             <!-- Saved books page (My library page) => saved book cards::start -->
-            <section class="saved-books position-absolute  SAVED_BOOKS_CONTAINER top-0 right-20">
+            <section class="saved-books position-absolute SAVED_BOOKS_CONTAINER top-0 right-20">
 
                 <div class="saved-books__container w-100 d-flex mb-5 mt-5 flex-wrap">
                     <div
                         class="saved-books__container--title d-flex justify-content-between align-items-center pt-4 pb-3 pe-3 ps-3">
                         <span class="fs-lg-20px fw-semibold ms-3">همه کتاب‌ها</span>
 
-                        <div>
-                            <i class="fa-solid fa-chevron-down fs-lg-10px"></i>
-                            <span class="fs-lg-10px">نمایش همه</span>
+                        <div class="SHOW_MORE_SAVED_BOOKS saved-books__container--show-more">
+                            <i class="fa-solid fa-chevron-down SHOW_MORE_SAVED_BOOKS_ICON fs-lg-10px"></i>
+                            <span class="fs-lg-10px SHOW_MORE_SAVED_BOOKS_TEXT">نمایش همه</span>
 
                         </div>
                     </div>
                     <div
-                        class="saved-books__container--books h-85 align-items-center saved-books-title d-flex align-items-center ALL_SAVED_BOOKS">
+                        class="saved-books__container--books max-h-350 saved-books-title d-flex mt-4 mb-4 align-items-center flex-wrap justify-content-evenly ALL_SAVED_BOOKS">
                         <!-- All saved books go here -->
                     </div>
                 </div>
@@ -683,14 +610,13 @@
                         class="saved-books__container--title d-flex justify-content-between align-items-center pt-4 pb-3 pe-3 ps-3">
                         <span class="fs-lg-20px fw-semibold ms-3">مورد علاقه‌ها</span>
 
-                        <div>
-                            <i class="fa-solid fa-chevron-down fs-lg-10px"></i>
-                            <span class="fs-lg-10px">نمایش همه</span>
-
+                        <div class="SHOW_MORE_FAV_BOOKS saved-books__container--show-more">
+                            <i class="fa-solid fa-chevron-down fs-lg-10px SHOW_MORE_FAV_BOOKS_ICON"></i>
+                            <span class="fs-lg-10px SHOW_MORE_FAV_BOOKS_TEXT">نمایش همه</span>
                         </div>
                     </div>
                     <div
-                        class="saved-books__container--books h-85 saved-books-title d-flex align-items-center FAV_SAVED_BOOKS">
+                        class="saved-books__container--books max-h-350 saved-books-title d-flex align-items-center ALL_FAV_BOOKS FAV_SAVED_BOOKS">
                         <!-- favourite books go here -->
                     </div>
                 </div>

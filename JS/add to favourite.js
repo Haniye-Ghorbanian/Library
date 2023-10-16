@@ -143,3 +143,45 @@ function handleAddtoFav(buttons) {
     });
 }
 
+
+function handleAddtoFavFromSingleBookPage(button) {
+        const buttonId = button.getAttribute('data-fav-book');
+        const initialFavBtnState = getFavButtonState(buttonId);
+    
+        // Set the initial state of the button
+        if (initialFavBtnState === 'active') {
+            button.classList.add('fa-solid');
+        } else {
+            button.classList.add('fa-regular');
+        }
+    
+        // Add a click event listener to toggle the button state
+        button.addEventListener('click', addToFav);
+}
+
+
+
+let favContainerIsOpened = false;
+function showMoreFavBooks() {
+    debugger
+    if(!favContainerIsOpened) {
+        ALL_FAV_BOOKS.classList.remove('max-h-350');
+        ALL_FAV_BOOKS.classList.add('fit-content-h');
+        SHOW_MORE_FAV_BOOKS_TEXT.textContent = 'مشاهده کمتر';
+        SHOW_MORE_FAV_BOOKS_ICON.classList.remove('fa-chevron-down');
+        SHOW_MORE_FAV_BOOKS_ICON.classList.add('fa-chevron-up');
+        favContainerIsOpened = true;
+    } else {
+        ALL_FAV_BOOKS.classList.remove('fit-content-h');
+        ALL_FAV_BOOKS.classList.add('max-h-350');
+        SHOW_MORE_FAV_BOOKS_ICON.classList.add('fa-chevron-down');
+        SHOW_MORE_FAV_BOOKS_ICON.classList.remove('fa-chevron-up');
+        SHOW_MORE_FAV_BOOKS_TEXT.textContent = 'نمایش همه';
+        favContainerIsOpened = false;
+    }
+
+}
+
+
+
+SHOW_MORE_FAV_BOOKS.addEventListener('click', showMoreFavBooks)

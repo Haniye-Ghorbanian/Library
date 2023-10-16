@@ -130,6 +130,16 @@ svg {
   width: 1000px !important;
 }
 
+.max-h-350 {
+  max-height: 400px;
+}
+
+.fit-content-h {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+
 .mgc {
   position: relative;
   width: 16px;
@@ -535,7 +545,7 @@ svg {
   width: 70%;
 }
 .saved-books__container {
-  height: 700px;
+  overflow: hidden;
   background-color: white;
   border-radius: 10px;
 }
@@ -543,9 +553,13 @@ svg {
   width: inherit;
 }
 .saved-books__container--title {
-  height: 15%;
+  height: 80px;
   border-bottom: 0.5px solid rgba(212, 212, 210, 0.6588235294);
 }
+.saved-books__container--show-more {
+  cursor: pointer;
+}
+
 .single-book-page__book {
   height: 600px;
 }

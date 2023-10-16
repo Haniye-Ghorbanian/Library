@@ -4,7 +4,9 @@
     
 
     &__container {
-        height: 700px;
+        // max-height: 500px;
+        // height: fit-content;
+        overflow: hidden;
         background-color: white;
         border-radius: 10px;
         
@@ -15,12 +17,16 @@
         }
 
         &--title {
-            height: 15%;
+            height: 80px;
             border-bottom: .5px solid #d4d4d2a8;
         }
 
         &--books {
             // height: 85%;
+        }
+
+        &--show-more {
+            cursor: pointer;
         }
     }
 }
